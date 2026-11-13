@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         enemyMove = GetComponent<EnemyMove>();
     }
 
@@ -55,22 +56,15 @@ public class EnemyHealth : MonoBehaviour
             {
                 // Weapon drop
                 case 0:
-
-
                     break;
 
 
                 // Hull drop
                 case 1:
-
-
                     break;
-
-
+                
                 // Leg Drop
                 case 2:
-
-
                     break;
 
             }
