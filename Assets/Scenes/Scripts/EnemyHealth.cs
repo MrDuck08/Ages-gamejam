@@ -7,10 +7,12 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] int chanceForDrop = 10;
 
+    EnemyMove enemyMove;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        enemyMove = GetComponent<EnemyMove>();
     }
 
     // Update is called once per frame
@@ -31,21 +33,11 @@ public class EnemyHealth : MonoBehaviour
         }
         else
         {
-            Stagger(staggerTime);
+            StartCoroutine(enemyMove.StaggerRoutine(staggerTime));
         }
 
     }
 
-
-
-    IEnumerator Stagger(float staggerTime)
-    {
-        // MoveSpeed = 0
-
-        yield return new WaitForSeconds(staggerTime);
-
-        // MoveSpeed = 1
-    }
 
 
     void Die()
