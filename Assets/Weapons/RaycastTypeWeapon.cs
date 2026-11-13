@@ -5,6 +5,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
 {
     [Header("Raycast settings")]
     [SerializeField] private float shotDistance;
+    [SerializeField] private float damage;
     
     [Header("System stuff")]
     [SerializeField] private LayerMask layersToCheckFiringFor;
@@ -18,7 +19,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
             {
                 //we hit something!
                 Debug.Log("We hit the following object! " + hit.collider.gameObject);
-                //hit.collider.gameObject.GetComponent<Health>().TakeDamage(pelletDamage);
+                hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage);
             }
         }
     }
