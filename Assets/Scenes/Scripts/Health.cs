@@ -8,6 +8,10 @@ public class Health : MonoBehaviour
     {
         health -= damage;
         if (health <= 0) {OnDeath.Invoke();}
+        else
+        {
+            //StartCoroutine(enemyMove.StaggerRoutine(staggerTime));
+        }
     }
 
     public UnityEvent OnDeath;

@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     
     void Start()
     {
+        
         enemyMove = GetComponent<EnemyMove>();
     }
     
@@ -53,22 +54,15 @@ public class EnemyHealth : MonoBehaviour
             {
                 // Weapon drop
                 case 0:
-
-
                     break;
 
 
                 // Hull drop
                 case 1:
-
-
                     break;
-
-
+                
                 // Leg Drop
                 case 2:
-
-
                     break;
 
             }
