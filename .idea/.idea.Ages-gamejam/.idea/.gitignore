@@ -2,8 +2,8 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
-/contentModel.xml
 /modules.xml
+/contentModel.xml
 /.idea.Ages-gamejam.iml
 /projectSettingsUpdater.xml
 # Editor-based HTTP Client requests
