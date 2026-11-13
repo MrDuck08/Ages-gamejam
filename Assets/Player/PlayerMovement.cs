@@ -32,17 +32,31 @@ public class PlayerMovement : MonoBehaviour
     }
 
     [SerializeField] private float MoveSpeed;
-    [SerializeField] private float RotateSpeed;
+    [SerializeField] private float MaxSpeed;
     private void FixedUpdate()
     {
         //Normal Movement
-        rb.AddForce(moveAction.ReadValue<Vector2>() * 10f);
+        
+        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector2 velocityToSet = rb.linearVelocity;
+        
+        velocityToSet += input * (MoveSpeed * rb.linearDamping * Time.fixedDeltaTime);
+
+        if (velocityToSet.magnitude > MaxSpeed * rb.linearDamping)
+        {
+            //we need to limit it. normalize the vector and then make it the same length as max speed.
+            velocityToSet = rb.linearVelocity.normalized * (MaxSpeed * rb.linearDamping);
+        }
+
+        rb.linearVelocity = velocityToSet;
+        
         DoLookWithMouse(lookAction.ReadValue<Vector2>());
+        
         //Tank Movement
         //rb.AddForce(new Vector2(0, moveAction.ReadValue<Vector2>().y) * MoveSpeed);
         //rb.AddTorque(moveAction.ReadValue<Vector2>().x * RotateSpeed * -1);
     }
-
+    
     private void DoLookWithMouse(Vector2 mouseInput)
     {
         virtualMousePosition += mouseInput * Time.deltaTime;

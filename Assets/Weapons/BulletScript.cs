@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour
         if (( whatToHitLayerMask & (1 << other.gameObject.layer)) != 0)
         {
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }
