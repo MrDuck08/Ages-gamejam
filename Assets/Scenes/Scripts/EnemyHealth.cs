@@ -8,15 +8,13 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int chanceForDrop = 10;
 
     EnemyMove enemyMove;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         
         enemyMove = GetComponent<EnemyMove>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         
