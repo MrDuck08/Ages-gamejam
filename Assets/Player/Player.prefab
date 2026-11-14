@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 4703331059133237998}
   - component: {fileID: 8115093806537136154}
   - component: {fileID: 2595022789540840622}
-  - component: {fileID: 8202362915607172050}
+  - component: {fileID: 6615732472976885500}
   - component: {fileID: 7416384199970099309}
   - component: {fileID: 6486647870781705876}
   - component: {fileID: 1324468522729886683}
@@ -477,7 +477,7 @@ MonoBehaviour:
   baseLegs: {fileID: 2960900281843506272}
   sizeOfMouseConfineRing: 0.5
   AimType: 1
---- !u!114 &8202362915607172050
+--- !u!114 &6615732472976885500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -486,17 +486,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6430901038694569406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f4dcee10e984949b6f35056ec4ffe9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9303c65186802554088b3bb0cc92d85c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 25
-  invicibilityTime: 1
-  weaponsObjList: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8202362915607172050}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+      - m_Target: {fileID: 6615732472976885500}
+        m_TargetAssemblyTypeName: PlayerHealth, Assembly-CSharp
         m_MethodName: DestroySelf
         m_Mode: 1
         m_Arguments:
@@ -507,6 +505,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  invicibilityTime: 1
 --- !u!50 &7416384199970099309
 Rigidbody2D:
   serializedVersion: 5
