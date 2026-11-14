@@ -405,6 +405,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8872819937081233404, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: fireRate
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872819937081233404, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: shootOutForce
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

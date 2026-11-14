@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
+
     [SerializeField] private WeaponBaseClass currentWeapon; //temporary serialization because of yeah
     public void ShootWeapon(InputAction.CallbackContext context)
     {
