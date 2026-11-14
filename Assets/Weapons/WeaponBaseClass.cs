@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Pickupable))]
 public abstract class WeaponBaseClass : MonoBehaviour
 {
     [Header("Base settings")]
@@ -17,6 +18,8 @@ public abstract class WeaponBaseClass : MonoBehaviour
     
     
     public UnityEvent<WeaponBaseClass>  OnDurabilityRunOut = new();
+
+    private Pickupable pickupable;
     
     private float betweenShotsTimer;
     private float durability;
@@ -24,6 +27,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
     private void Start()
     {
         durability = defaultDurability;
+        pickupable = GetComponent<Pickupable>();
     }
 
     public virtual void Enter()
@@ -52,7 +56,12 @@ public abstract class WeaponBaseClass : MonoBehaviour
             }
         }
     }
-    public virtual void Exit(){}
+
+    public virtual void Drop()
+    {
+        pickupable.HasBeenPickedUp = false;
+        transform.SetParent(null);
+    }
 
     protected abstract void ShootWeapon();
 }

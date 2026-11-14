@@ -28,12 +28,12 @@ public class PlayerWeaponHandler : MonoBehaviour
         if(context.performed) rightHandCurrentWeapon.InputTryShootWeapon();
     }
 
-    public void SwapToWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand)
+    private void SwapToWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand, bool fixForDurabilityRanOut)
     {
         WeaponBaseClass currentWeapon = whichHand ? leftHandCurrentWeapon : rightHandCurrentWeapon;
         
         currentWeapon.OnDurabilityRunOut.RemoveListener(OnWeaponRunOutOfDurability);
-        currentWeapon.Exit();
+        if(currentWeapon != fistWeapon && !fixForDurabilityRanOut) currentWeapon.Drop();
 
         if (!whichHand) leftHandCurrentWeapon = weaponToSwapTo;
         else rightHandCurrentWeapon = weaponToSwapTo;
@@ -42,11 +42,18 @@ public class PlayerWeaponHandler : MonoBehaviour
         currentWeapon.Enter();
     }
 
+    public void PickUpWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand)
+    {
+        weaponToSwapTo.gameObject.transform.SetParent(transform);
+        weaponToSwapTo.gameObject.transform.localPosition = Vector3.zero;
+        weaponToSwapTo.gameObject.transform.localRotation = Quaternion.identity;
+        
+        SwapToWeapon(weaponToSwapTo, whichHand, false);
+    }
+
     private void OnWeaponRunOutOfDurability(WeaponBaseClass weaponThatDied)
     {
-        SwapToWeapon(fistWeapon, weaponThatDied != leftHandCurrentWeapon);
-        
-        //we ran out of durability, so let's kill it!
+        SwapToWeapon(fistWeapon, weaponThatDied != leftHandCurrentWeapon, true);
         Destroy(weaponThatDied.gameObject);
     }
 }

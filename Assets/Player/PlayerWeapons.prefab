@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8216826132504412489}
   - component: {fileID: 4258241775779538894}
+  - component: {fileID: 2636731073806868187}
   m_Layer: 0
   m_Name: RaycastWeapon
   m_TagString: Untagged
@@ -55,9 +56,25 @@ MonoBehaviour:
       m_Calls: []
   shotDistance: 5
   damage: 1
+  staggerTime: 1.5
+  raycastAll: 0
   layersToCheckFiringFor:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &2636731073806868187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765665469576917105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickupable
+  pickUpType: 0
+  HasBeenPickedUp: 1
 --- !u!1 &2005604099043321282
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9071874017222825569}
   - component: {fileID: 8872819937081233404}
+  - component: {fileID: 4445214976037757449}
   m_Layer: 0
   m_Name: PrefabWeapon
   m_TagString: Untagged
@@ -113,6 +131,20 @@ MonoBehaviour:
       m_Calls: []
   shootOutForce: 2000
   bulletPrefab: {fileID: 594461137963306328, guid: b34d465d82216144ab2a01742f18a2d9, type: 3}
+--- !u!114 &4445214976037757449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005604099043321282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickupable
+  pickUpType: 0
+  HasBeenPickedUp: 1
 --- !u!1 &4728601483118797564
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476150436241233814}
   - component: {fileID: 5114781909034900481}
+  - component: {fileID: 5129689159600948006}
   m_Layer: 0
   m_Name: FistWeapon
   m_TagString: Untagged
@@ -311,3 +344,17 @@ MonoBehaviour:
       m_Calls: []
   shootOutForce: 0
   bulletPrefab: {fileID: 950402744807110711, guid: b36e0d55599b6c74eaeda4488c508abb, type: 3}
+--- !u!114 &5129689159600948006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7300708222858240825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickupable
+  pickUpType: 0
+  HasBeenPickedUp: 1

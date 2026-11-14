@@ -41,6 +41,33 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PickUpLeft",
+                    "type": "Button",
+                    "id": "9e553300-5bf6-4d0c-a661-bc1dbf770282",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PickUpRight",
+                    "type": "Button",
+                    "id": "5267387e-b90f-4c35-86be-3338df0fe952",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PickUpIntoBag",
+                    "type": "Button",
+                    "id": "d23fe67e-72c4-4a77-8b4b-f178763c4d82",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -228,6 +255,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "RightFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cdc00218-2333-4d16-9057-5294c102feee",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUpLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd46dbf3-fedf-47ad-a0f0-f0fd85fbc0f7",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUpRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88da7e5f-b6d1-41eb-bdb5-7ea1a5602141",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUpIntoBag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
