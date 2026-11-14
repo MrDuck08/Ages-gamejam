@@ -85,9 +85,9 @@ public class TestSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(difficultyIncreaseInterval);
 
-        if(enemySpawnInterval > 0.2f)
+        if(enemySpawnInterval > 0.35f)
         {
-            enemySpawnInterval -= 0.1f;
+            enemySpawnInterval -= 0.05f;
 
             StartCoroutine(IncreaseDifficultyRoutine());
         }
