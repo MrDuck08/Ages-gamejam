@@ -37,7 +37,6 @@ public class EnemyHealth : Health
             //Drop weapon
             if(whatToDrop <= 2)
             {
-                Debug.Log("Drop Weapon");
                 int rareWeaponDropList = Random.Range(0, 3);
 
                 int whatWeaponDrop = Random.Range(0, commonWeaponsList.Count);
@@ -46,19 +45,16 @@ public class EnemyHealth : Health
                     whatWeaponDrop = Random.Range(0, rareWeaponsList.Count);
                     GameObject spawnedObj = Instantiate(rareWeaponsList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
-                    Debug.Log("Drop Common");
                 }
                 else
                 {
                     GameObject spawnedObj = Instantiate(commonWeaponsList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
-                    Debug.Log("Drop Rail gun");
                 }
 
             }
             else
             {
-                Debug.Log("Drop part");
                 int hullDrop = Random.Range(0, 3);
 
                 int whatWeaponDrop = Random.Range(0, legsDropList.Count);
@@ -67,13 +63,11 @@ public class EnemyHealth : Health
                     whatWeaponDrop = Random.Range(0, hullDropsList.Count);
                     GameObject spawnedObj = Instantiate(hullDropsList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
-                    Debug.Log("Drop Hull");
                 }
                 else
                 {
                     GameObject spawnedObj = Instantiate(legsDropList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
-                    Debug.Log("Drop Leg");
                 }
 
             }
