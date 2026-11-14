@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7128438546742456128}
   - component: {fileID: 4345696708796822123}
   - component: {fileID: 799736470104588467}
+  - component: {fileID: 1604153034260464233}
   m_Layer: 7
   m_Name: PrefabWeapon
   m_TagString: Untagged
@@ -83,6 +84,7 @@ MonoBehaviour:
   - {fileID: 9146965769709988895}
   fireRate: 0.15
   defaultDurability: 45
+  weaponAnimator: {fileID: 1604153034260464233}
   doesNotLoseDurability: 0
   weaponIcon: {fileID: 166860363398905372, guid: 8cd22b9f61a1dd74597ab86beea288a7, type: 3}
   OnDurabilityRunOut:
@@ -100,8 +102,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  betweenShotsTimer: 0
   shootOutForce: 2500
   bulletPrefab: {fileID: 594461137963306328, guid: b34d465d82216144ab2a01742f18a2d9, type: 3}
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1604153034260464233}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Shot
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7128438546742456128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   pickUpType: 0
+  scrapValue: 0
   HasBeenPickedUp: 0
 --- !u!61 &4345696708796822123
 BoxCollider2D:
@@ -154,7 +173,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.53, y: 1.88}
+    oldSize: {x: 1, y: 2.5}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -221,3 +240,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &1604153034260464233
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938346672409831563}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 596bf8ade49f970448ac45511b742f36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
