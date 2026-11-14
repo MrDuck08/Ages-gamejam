@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 61d64a7f3561e294abd55cbf9ec5144a
+guid: edad866da6abf2447a908e252e606d33
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 289304076954051067
-    second: Spr_RailgunLoop_5_0
+      213: -1490054439507645443
+    second: Spr_ScrappyWheelsLoop_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_RailgunLoop_5_0
+      name: Spr_ScrappyWheelsLoop_2_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 36
-        width: 115
-        height: 286
+        x: 0
+        y: 0
+        width: 128
+        height: 116
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf12be27680d30400800000000000000
-      internalID: 289304076954051067
+      spriteID: dfb2725c163425be0800000000000000
+      internalID: -1490054439507645443
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Spr_RailgunLoop_5_0: 289304076954051067
+      Spr_ScrappyWheelsLoop_2_0: -1490054439507645443
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
