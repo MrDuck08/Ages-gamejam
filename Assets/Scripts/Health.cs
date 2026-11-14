@@ -85,6 +85,7 @@ public class Health : MonoBehaviour
         // Detta är spelaren som får en collision
         if(enemyMove == null)
         {
+            Debug.Log(collision.gameObject.layer + " What layer");
             // Blir träffad av en fiende
             if(collision.gameObject.layer == 6)
             {
