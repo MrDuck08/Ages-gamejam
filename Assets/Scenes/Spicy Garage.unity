@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2029155236642389779, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_Name
+      value: RightHandOfJUSTICE
+      objectReference: {fileID: 0}
     - target: {fileID: 2788219926865624205, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -215,10 +219,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6829254003496905188, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 698019360}
+    - target: {fileID: 6829254003496905188, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 187853787}
     - target: {fileID: 8362218597183422442, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
       propertyPath: weaponIcon
       value: 
       objectReference: {fileID: 1208040086343421634, guid: f53f11bc9c375364bb6695f004a5bbc3, type: 3}
+    - target: {fileID: 8533662921486513950, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_Name
+      value: LeftHandDrownedInEvil
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -281,6 +297,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b19171fa25344e47b06ac6db5a71779, type: 3}
+--- !u!4 &187853787 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3239239604588477913, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+  m_PrefabInstance: {fileID: 55473980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &354902999
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +443,11 @@ Transform:
   - {fileID: 1581077125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &698019360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4970171532636978058, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+  m_PrefabInstance: {fileID: 55473980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &732727558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4703331059133237998, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}

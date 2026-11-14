@@ -55,9 +55,9 @@ MonoBehaviour:
   - {fileID: -2143373980341527264, guid: 349685f7a6d4f56418291c976d21ed51, type: 3}
   - {fileID: -2457970648479473204, guid: 5fdf957d50fadf24b94f23d8e93f71aa, type: 3}
   - {fileID: 5890754317964845256, guid: a3ed1b77614a30447aa080cac26ef5bd, type: 3}
-  trackRenderer: {fileID: 3601406296293060608}
-  trackSprites:
-  - {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
+  trackRenderer: {fileID: 5489833022319986292}
+  trackClips:
+  - {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
 --- !u!1 &3060983804892467090
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +68,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8280129829762261112}
   - component: {fileID: 3601406296293060608}
+  - component: {fileID: 5314263965132340590}
+  - component: {fileID: 5489833022319986292}
   m_Layer: 0
   m_Name: Tread
   m_TagString: Untagged
@@ -149,6 +151,44 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &5314263965132340590
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060983804892467090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87e3b5236c7131746a057b99fc8078f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!111 &5489833022319986292
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060983804892467090}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &3769202673066940109
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2179842166880045393}
   - component: {fileID: 319461321960667103}
+  - component: {fileID: 1044785163610518626}
   m_Layer: 0
   m_Name: Hull
   m_TagString: Untagged
@@ -240,3 +281,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!111 &1044785163610518626
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769202673066940109}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
