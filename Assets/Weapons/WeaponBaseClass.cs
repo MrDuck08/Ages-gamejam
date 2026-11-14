@@ -10,6 +10,10 @@ public abstract class WeaponBaseClass : MonoBehaviour
     [SerializeField] protected List<Transform> shootPoints = new();
     [SerializeField] private float fireRate;
     [SerializeField] private float defaultDurability;
+    [SerializeField] private Animator weaponAnimator;
+    bool startedAnimation = false;
+    float animationTime = 0;
+    float fireAnimationTime = 0;
     [Tooltip("This is just for the fist.")]
     [SerializeField] private bool doesNotLoseDurability;
 
@@ -32,6 +36,15 @@ public abstract class WeaponBaseClass : MonoBehaviour
     {
         durability = defaultDurability;
         pickupable = GetComponent<Pickupable>();
+
+        AnimationClip[] clips = weaponAnimator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            if(clip.name == "FireAnimation")
+            {
+                fireAnimationTime = clip.length;
+            }
+        }
     }
 
     public virtual void Enter()
@@ -42,6 +55,23 @@ public abstract class WeaponBaseClass : MonoBehaviour
     public void Update()
     {
         if (betweenShotsTimer > 0) betweenShotsTimer -= Time.deltaTime;
+
+
+        if(weaponAnimator != null)
+        {
+            if (startedAnimation)
+            {
+                animationTime -= Time.deltaTime;
+
+                if(animationTime <= 0)
+                {
+                    // När en animation är klar går den till idle
+                    Debug.Log("GO BACK");
+                    weaponAnimator.SetTrigger("ShotDone");
+                    startedAnimation = false;
+                }
+            }
+        }
     }
 
     public void InputTryShootWeapon()
@@ -51,6 +81,13 @@ public abstract class WeaponBaseClass : MonoBehaviour
             //WE CAN FIRE LAD!
             ShootWeapon();
             betweenShotsTimer = fireRate;
+
+            if(weaponAnimator != null)
+            {
+                weaponAnimator.SetTrigger("Shot");
+                animationTime = fireAnimationTime;
+                startedAnimation = true;
+            }
 
             TakeDurabilityDamage(1);
         }
