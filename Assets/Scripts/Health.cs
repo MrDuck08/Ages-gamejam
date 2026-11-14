@@ -4,13 +4,24 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float health;
-    public void TakeDamage(float damage)
+
+    EnemyMove enemyMove;
+
+    private void Start()
+    {
+        enemyMove = GetComponent<EnemyMove>();
+    }
+
+    public void TakeDamage(float damage, float staggerTime)
     {
         health -= damage;
         if (health <= 0) {OnDeath.Invoke();}
         else
         {
-            //StartCoroutine(enemyMove.StaggerRoutine(staggerTime));
+            if(enemyMove != null)
+            {
+                StartCoroutine(enemyMove.StaggerRoutine(staggerTime));
+            }
         }
     }
 

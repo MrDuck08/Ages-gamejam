@@ -6,7 +6,8 @@ public class RaycastTypeWeapon : WeaponBaseClass
     [Header("Raycast settings")]
     [SerializeField] private float shotDistance;
     [SerializeField] private float damage;
-    
+    [SerializeField] private float staggerTime = 1.5f;
+
     [Header("System stuff")]
     [SerializeField] private LayerMask layersToCheckFiringFor;
     
@@ -22,7 +23,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
                 for (int i = 0; i < hit.Length; i++)
                 {
 
-                    hit[i].collider.gameObject.GetComponent<Health>().TakeDamage(damage);
+                    hit[i].collider.gameObject.GetComponent<Health>().TakeDamage(damage, staggerTime);
 
                 }
             }

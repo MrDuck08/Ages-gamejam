@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TestSpawner
   player: {fileID: 0}
   enemyObj: {fileID: 449698669327287373, guid: 6d9e0dee207fa4d44aead176deb1c1fa, type: 3}
-  minSpawnPos: {x: 8, y: 5}
-  maxSpawnPos: {x: 10, y: 7}
+  minSpawnPos: {x: 10, y: 7}
+  maxSpawnPos: {x: 13, y: 9}

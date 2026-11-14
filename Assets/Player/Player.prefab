@@ -580,13 +580,14 @@ MonoBehaviour:
   - {fileID: 1561769753370717673}
   - {fileID: 4607528370732526486}
   fireRate: 0.1
-  defaultDurability: 2
+  defaultDurability: 6
   doesNotLoseDurability: 0
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
-  shotDistance: 3
-  damage: 1
+  shotDistance: 5
+  damage: 3
+  staggerTime: 1.5
   layersToCheckFiringFor:
     serializedVersion: 2
     m_Bits: 64

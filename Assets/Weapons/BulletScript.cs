@@ -4,6 +4,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
     [SerializeField] private float damage;
+    [SerializeField] private float staggerTime = 0.1f;
     [SerializeField] private LayerMask whatToHitLayerMask;
     [SerializeField] private bool doNotDestroySelfUponHit;
     
@@ -11,7 +12,7 @@ public class BulletScript : MonoBehaviour
     {
         if (( whatToHitLayerMask & (1 << other.gameObject.layer)) != 0)
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(damage);
+            other.gameObject.GetComponent<Health>().TakeDamage(damage, staggerTime);
             if(!doNotDestroySelfUponHit) Destroy(gameObject);
         }
     }
