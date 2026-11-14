@@ -8,6 +8,7 @@ public class PickUpSystem : MonoBehaviour
 {
     [SerializeField] private PlayerWeaponHandler weaponHandler;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private Transform whatToPickUpIndicatorObject;
     
     [SerializeField] private float pickUpRadius;
@@ -49,6 +50,10 @@ public class PickUpSystem : MonoBehaviour
             {
                 playerMovement.TryPickUpNewLegs(currentThingWeCanTryToPickUp.GetComponent<BaseLegs>());
             }
+            else if (currentThingWeCanTryToPickUp.Type == PickupableType.Hull)
+            {
+                playerHealth.SwapHull(currentThingWeCanTryToPickUp.GetComponent<BaseHull>());
+            }
         }
     }
     public void TryPickUpRight(InputAction.CallbackContext context)
@@ -65,6 +70,10 @@ public class PickUpSystem : MonoBehaviour
             else if(currentThingWeCanTryToPickUp.Type == PickupableType.Legs)
             {
                 playerMovement.TryPickUpNewLegs(currentThingWeCanTryToPickUp.GetComponent<BaseLegs>());
+            }
+            else if (currentThingWeCanTryToPickUp.Type == PickupableType.Hull)
+            {
+                playerHealth.SwapHull(currentThingWeCanTryToPickUp.GetComponent<BaseHull>());
             }
         }
     }

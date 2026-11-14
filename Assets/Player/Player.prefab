@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpSystem
   weaponHandler: {fileID: 6829254003496905188}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 2595022789540840622}
+  playerHealth: {fileID: 6615732472976885500}
   whatToPickUpIndicatorObject: {fileID: 1476195999963402097}
   pickUpRadius: 5
   layermaskOfPickupAbles:
@@ -359,7 +360,7 @@ MonoBehaviour:
   durability: 10
   IsInfiniteDurability: 1
   icon: {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
-  spriteRender: {fileID: 0}
+  spriteRender: {fileID: 7117011267603148100}
 --- !u!1 &6430901038694569406
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +507,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   invicibilityTime: 1
+  layersWeCanTakeDamageFrom:
+    serializedVersion: 2
+    m_Bits: 64
+  weaponHandler: {fileID: 6829254003496905188}
+  playerMove: {fileID: 2595022789540840622}
 --- !u!50 &7416384199970099309
 Rigidbody2D:
   serializedVersion: 5

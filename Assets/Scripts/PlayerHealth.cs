@@ -9,10 +9,12 @@ public class PlayerHealth : Health
     [SerializeField] private float invicibilityTime = 1f;
     private bool invincible;
 
+    [SerializeField] private LayerMask layersWeCanTakeDamageFrom;
+
     [Header("Refrences for damage dealing")] 
     [SerializeField] private PlayerWeaponHandler weaponHandler;
     [SerializeField] private PlayerMovement playerMove;
-    //here we also need a refrence to the hull.
+    private BaseHull currentHull;
     
     public override void TakeDamage(float damage, float staggerTime)
     {
@@ -21,6 +23,10 @@ public class PlayerHealth : Health
             float damageCalculating = damage;
             
             //hull will mitigate damage only for health taking
+            if (currentHull != null)
+            {
+                damageCalculating = currentHull.CalculateHowMuchLeftOver(damage);
+            }
 
             playerMove.LegsTakeDurabilityDamage(damage / 3f);
             weaponHandler.TakeDurabilityDamage(damage / 3f);
@@ -43,14 +49,22 @@ public class PlayerHealth : Health
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Detta är spelaren som får en collision
-        Debug.Log(collision.gameObject.layer + " What layer");
-        
         // Blir träffad av en fiende
-        if(collision.gameObject.layer == 6)
+        if (( layersWeCanTakeDamageFrom & (1 << collision.gameObject.layer)) != 0)
         {
             Debug.Log("Take Damage");
             TakeDamage(5f, 1337);
         }
+    }
+
+    public void SwapHull(BaseHull newHull)
+    {
+        if (currentHull != null)
+        {
+            currentHull.DropSelf();
+        }
+
+        currentHull = newHull;
+        currentHull.BePickedUp(transform);
     }
 }
