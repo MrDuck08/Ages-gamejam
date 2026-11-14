@@ -98,6 +98,7 @@ MonoBehaviour:
   damage: 3
   staggerTime: 1.5
   raycastAll: 1
+  trailEffectObj: {fileID: 1728838832443497699, guid: 7daf8977404d72a439ef7757acb714b4, type: 3}
   layersToCheckFiringFor:
     serializedVersion: 2
     m_Bits: 64

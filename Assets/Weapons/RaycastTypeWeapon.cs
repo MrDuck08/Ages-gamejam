@@ -9,9 +9,12 @@ public class RaycastTypeWeapon : WeaponBaseClass
     [SerializeField] private float staggerTime = 1.5f;
     [SerializeField] private bool raycastAll = false;
 
+    [SerializeField] private GameObject trailEffectObj;
+
     [Header("System stuff")]
     [SerializeField] private LayerMask layersToCheckFiringFor;
-    
+
+
     protected override void ShootWeapon()
     {
         if (raycastAll)
@@ -22,6 +25,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
                 RaycastHit2D[] hit = Physics2D.RaycastAll(shootPoint.position, shootPoint.up, shotDistance, layersToCheckFiringFor);
                 if (hit != null)
                 {
+
                     //we hit something!
                     Debug.Log(hit.Length + " How mnay enemies hit");
                     for (int i = 0; i < hit.Length; i++)
@@ -31,6 +35,10 @@ public class RaycastTypeWeapon : WeaponBaseClass
 
                     }
                 }
+
+                GameObject trail = Instantiate(trailEffectObj);
+                trail.GetComponent<BulletTrailEffect>().MoveAndFadeTrail(shootPoint.position, shootPoint.position + shootPoint.up * shotDistance);
+
             }
         }
         else
@@ -44,6 +52,9 @@ public class RaycastTypeWeapon : WeaponBaseClass
                     //we hit something!
                     hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage, staggerTime);
                 }
+
+                GameObject trail = Instantiate(trailEffectObj);
+                trail.GetComponent<BulletTrailEffect>().MoveAndFadeTrail(shootPoint.position, shootPoint.position + shootPoint.up * shotDistance);
             }
         }
 
