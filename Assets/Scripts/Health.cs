@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float health;
+    [SerializeField] protected float health;
     public UnityEvent OnDeath;
 
     public virtual void TakeDamage(float damage, float staggerTime)
