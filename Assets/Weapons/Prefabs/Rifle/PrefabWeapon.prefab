@@ -80,9 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6dd0c5722d4c1c987242c6fa67f0cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
-  weaponInfoClass:
-    durability: 0
-    prefab: {fileID: 4938346672409831563}
+  durability: 0
   shootPoints:
   - {fileID: 9146965769709988895}
   fireRate: 0.15
@@ -105,7 +103,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  betweenShotsTimer: 0
   shootOutForce: 2500
   bulletPrefab: {fileID: 594461137963306328, guid: b34d465d82216144ab2a01742f18a2d9, type: 3}
   OnShoot:
@@ -135,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
+  prefabReference: {fileID: 11400000, guid: 3f062ee26ac017449b91a23c4ef9a7ad, type: 2}
   pickUpType: 0
   scrapValue: 0
   HasBeenPickedUp: 0

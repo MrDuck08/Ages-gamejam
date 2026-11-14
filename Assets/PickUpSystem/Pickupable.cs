@@ -4,11 +4,17 @@ using Random = UnityEngine.Random;
 
 public class Pickupable : MonoBehaviour
 {
+    public PrefabHolder prefabReference;
+    
     [SerializeField] private PickupableType pickUpType;
     [Tooltip("Has built in randomization offset ranging from -5 to +5")]
     [SerializeField] private int scrapValue;
     public PickupableType Type => pickUpType;
-    public int ScrapValue => scrapValue;
+    public int ScrapValue
+    {
+        get => scrapValue;
+        set => scrapValue = value;
+    }
 
     [Tooltip("Okay so if we want the ability to drop weapons then we have to swap this back to false")]
     public bool HasBeenPickedUp;

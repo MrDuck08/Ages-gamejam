@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Pickupable))]
 public abstract class WeaponBaseClass : MonoBehaviour
 {
     [Header("Base settings")] 
-    [SerializeField] private WeaponObjectInfoClass weaponInfoClass;
-    
+    [SerializeField] private float durability;
     [SerializeField] protected List<Transform> shootPoints = new();
     [SerializeField] private float fireRate;
     [SerializeField] private float defaultDurability;
@@ -29,13 +29,17 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
     private Pickupable pickupable;
     
-    [SerializeField] private float betweenShotsTimer; //TEMP FOR VISUALS
-    public float Durability => weaponInfoClass.durability;
+    private float betweenShotsTimer; 
+    public float Durability
+    {
+        get => durability;
+        set => durability = value;
+    }
 
     private void Start()
     {
         tag = "Weapon";
-        weaponInfoClass.durability = defaultDurability;
+        durability = defaultDurability;
         pickupable = GetComponent<Pickupable>();
 
         AnimationClip[] clips = weaponAnimator.runtimeAnimatorController.animationClips;
@@ -100,8 +104,8 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
     public void TakeDurabilityDamage(float damage)
     {
-        if(!doesNotLoseDurability) weaponInfoClass.durability -= damage;
-        if (weaponInfoClass.durability <= 0)
+        if(!doesNotLoseDurability) durability -= damage;
+        if (durability <= 0)
         {
             OnDurabilityRunOut?.Invoke(this);
         }

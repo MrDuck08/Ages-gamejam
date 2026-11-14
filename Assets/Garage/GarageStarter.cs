@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GarageStarter : MonoBehaviour
 {
+    public bool ChangeToGarage;
+
+    private void Update()
+    {
+        if (ChangeToGarage)
+        {
+            GoToGarage();
+            ChangeToGarage = false;
+        }
+    }
+
     public void GoToGarage()
     {
         GameObject[] allWeaponsLayingOnTheGround = GameObject.FindGameObjectsWithTag("Weapon").Where(e => !e.GetComponent<Pickupable>().HasBeenPickedUp).ToArray();
@@ -13,6 +24,9 @@ public class GarageStarter : MonoBehaviour
             //scrap em, and sell em for half the value
             PlayerScrapAndBagManager.Singleton.TurnItemIntoScrap(allWeaponsLayingOnTheGround[i].GetComponent<Pickupable>(), true);
         }
+        
+        //also somehow store our current weapons
+        PlayerScrapAndBagManager.Singleton.RefreshWeaponInfoObjects();
         
         //swap to garage scene
         SceneManager.LoadScene("Garage");

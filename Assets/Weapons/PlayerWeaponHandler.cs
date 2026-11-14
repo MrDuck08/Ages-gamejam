@@ -37,6 +37,40 @@ public class PlayerWeaponHandler : MonoBehaviour
     
     private void Start()
     {
+        if (PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon != null)
+        {
+            //weapon loading shid
+            GameObject spawnedWeapon = Instantiate(PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon.prefab);
+            spawnedWeapon.GetComponent<Pickupable>().ScrapValue = PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon.scrapValue;
+            spawnedWeapon.GetComponent<Pickupable>().HasBeenPickedUp = true;
+            
+            WeaponBaseClass weaponClass = spawnedWeapon.GetComponent<WeaponBaseClass>();
+            weaponClass.Durability = PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon.durability;
+            
+            PickUpWeapon(weaponClass, false);
+        }
+        else
+        {
+            leftHandCurrentWeapon = leftFistWeapon;
+        }
+        
+        if (PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon != null)
+        {
+            //weapon loading shid
+            GameObject spawnedWeapon = Instantiate(PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon.prefab);
+            spawnedWeapon.GetComponent<Pickupable>().ScrapValue = PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon.scrapValue;
+            spawnedWeapon.GetComponent<Pickupable>().HasBeenPickedUp = true;
+            
+            WeaponBaseClass weaponClass = spawnedWeapon.GetComponent<WeaponBaseClass>();
+            weaponClass.Durability = PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon.durability;
+            
+            PickUpWeapon(weaponClass, true);
+        }
+        else
+        {
+            rightHandCurrentWeapon = rightFistWeapon;
+        }
+        
         leftHandCurrentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         rightHandCurrentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
     }
@@ -94,5 +128,10 @@ public class PlayerWeaponHandler : MonoBehaviour
     {
         leftHandCurrentWeapon.TakeDurabilityDamage(damage / 2f);
         rightHandCurrentWeapon.TakeDurabilityDamage(damage / 2f);
+    }
+
+    public bool IsWeaponAFist(WeaponBaseClass whatToCheck)
+    {
+        return whatToCheck == leftFistWeapon || whatToCheck == rightFistWeapon;
     }
 }

@@ -89497,6 +89497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90590659abbef1d468339a5ca3f928f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GarageStarter
+  ChangeToGarage: 0
 --- !u!4 &732727558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4703331059133237998, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
@@ -178746,6 +178747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScrapAndBagManager
   winScoreThreshold: 0
+  thingsStoredInBag: []
 --- !u!4 &1763541536
 Transform:
   m_ObjectHideFlags: 0

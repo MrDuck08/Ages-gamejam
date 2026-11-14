@@ -12,6 +12,6 @@ public class GarageManager : MonoBehaviour
 
     public void ExitGarage()
     {
-        
+        SceneManager.LoadScene("Spicy Garage");
     }
 }
