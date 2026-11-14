@@ -9,11 +9,11 @@ public class EnemyMove : MonoBehaviour
     float currentMoveSpeed = 1f;
     [SerializeField] float moveSpeed = 3f;
 
-    Rigidbody2D rigidbody2D;
+    private Rigidbody2D rb;
     
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
         target = FindObjectOfType<PlayerMovement>().gameObject.transform;
 
@@ -23,19 +23,24 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
 
+        /*
+        if (target == null) return;
         Vector2 direction = target.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 
+        */
     }
 
     private void FixedUpdate()
     {
         if(target == null) { return; }
+        //transform.position = Vector2.MoveTowards(transform.position, target.position, currentMoveSpeed * Time.deltaTime);
+        
+        Vector3 targetPosition = target.position;
+        float angleRadians = Mathf.Atan2(targetPosition.y - transform.position.y, targetPosition.x - transform.position.x);
+        rb.rotation = angleRadians * Mathf.Rad2Deg - 90f;
 
-
-        transform.position = Vector2.MoveTowards(transform.position, target.position, currentMoveSpeed * Time.deltaTime);
-
-        //rigidbody2D.AddForce(transform.up * (moveSpeed/5) * Time.deltaTime);
+        rb.linearVelocity = transform.up * (currentMoveSpeed);
 
     }
 

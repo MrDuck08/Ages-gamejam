@@ -124,7 +124,7 @@ MonoBehaviour:
   - {fileID: 4488432804694503194}
   - {fileID: 133809676935738959}
   - {fileID: 2188467278047593985}
-  fireRate: 0.5
+  fireRate: 0.7
   defaultDurability: 15
   doesNotLoseDurability: 0
   weaponIcon: {fileID: 1994507137525636367, guid: 54b6d7666046e584e8a7828867c21107, type: 3}
