@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     
     private BaseLegs currentLegs;
     [SerializeField] private BaseLegs baseLegs;
-    private float legsDurability;
     
     private Vector2 virtualMousePosition;
     [Header("Mouse aiming")]
@@ -38,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private float MoveSpeed;
     private float MaxSpeed;
     private void FixedUpdate()
-    {
+    { 
         //Normal Movement
         
         Vector2 input = moveAction.ReadValue<Vector2>();
@@ -92,11 +91,30 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetNewLegs(BaseLegs legs)
     {
+        if(legs != baseLegs) legs.BePickedUp(transform);
         currentLegs = legs;
-        legsDurability = legs.DefaultDurability;
 
         rb.linearDamping = legs.LinearDampening;
         MoveSpeed = legs.Speed;
         MaxSpeed = legs.MaxSpeed;
+    }
+
+    public void TryPickUpNewLegs(BaseLegs legsWeTrynnaPickUp)
+    {
+        if (currentLegs != baseLegs)
+        {
+            //we can drop these
+            currentLegs.DropSelf();
+        }
+        SetNewLegs(legsWeTrynnaPickUp);
+    }
+    
+    public void LegsTakeDurabilityDamage(float damage)
+    {
+        if (currentLegs.TakeDurabilityDamage(damage))
+        {
+            //ouch! our legs are gone!
+            SetNewLegs(baseLegs);
+        }
     }
 }

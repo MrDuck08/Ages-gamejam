@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PickUpSystem : MonoBehaviour
 {
     [SerializeField] private PlayerWeaponHandler weaponHandler;
+    [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Transform whatToPickUpIndicatorObject;
     
     [SerializeField] private float pickUpRadius;
@@ -44,6 +45,10 @@ public class PickUpSystem : MonoBehaviour
                 currentThingWeCanTryToPickUp.HasBeenPickedUp = true;
                 weaponHandler.PickUpWeapon(currentThingWeCanTryToPickUp.GetComponent<WeaponBaseClass>(), false);
             }
+            else if(currentThingWeCanTryToPickUp.Type == PickupableType.Legs)
+            {
+                playerMovement.TryPickUpNewLegs(currentThingWeCanTryToPickUp.GetComponent<BaseLegs>());
+            }
         }
     }
     public void TryPickUpRight(InputAction.CallbackContext context)
@@ -56,6 +61,10 @@ public class PickUpSystem : MonoBehaviour
             {
                 currentThingWeCanTryToPickUp.HasBeenPickedUp = true;
                 weaponHandler.PickUpWeapon(currentThingWeCanTryToPickUp.GetComponent<WeaponBaseClass>(), true);
+            }
+            else if(currentThingWeCanTryToPickUp.Type == PickupableType.Legs)
+            {
+                playerMovement.TryPickUpNewLegs(currentThingWeCanTryToPickUp.GetComponent<BaseLegs>());
             }
         }
     }

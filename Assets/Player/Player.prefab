@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpSystem
   weaponHandler: {fileID: 6829254003496905188}
+  playerMovement: {fileID: 0}
   whatToPickUpIndicatorObject: {fileID: 1476195999963402097}
   pickUpRadius: 5
   layermaskOfPickupAbles:
@@ -243,8 +244,10 @@ GameObject:
   m_Component:
   - component: {fileID: 692252029618895891}
   - component: {fileID: 7117011267603148100}
+  - component: {fileID: 6899162632221588132}
+  - component: {fileID: 2960900281843506272}
   m_Layer: 0
-  m_Name: Legs
+  m_Name: BaseLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,6 +327,38 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &6899162632221588132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259876250127930479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pickupable
+  pickUpType: 1
+  HasBeenPickedUp: 1
+--- !u!114 &2960900281843506272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4259876250127930479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d53fa1aba897043a4e7b9ab774612f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BaseLegs
+  speed: 15
+  maxSpeed: 33
+  linearDampening: 5
+  durability: 10
+  IsInfiniteDurability: 1
+  icon: {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
 --- !u!1 &6430901038694569406
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,8 +373,6 @@ GameObject:
   - component: {fileID: 8202362915607172050}
   - component: {fileID: 7416384199970099309}
   - component: {fileID: 6486647870781705876}
-  - component: {fileID: 2682998681789705831}
-  - component: {fileID: 2857339538051025187}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -439,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   rb: {fileID: 7416384199970099309}
-  baseLegs: {fileID: 2857339538051025187}
+  baseLegs: {fileID: 2960900281843506272}
   sizeOfMouseConfineRing: 0.5
   AimType: 1
 --- !u!114 &8202362915607172050
@@ -656,37 +689,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2682998681789705831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6430901038694569406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickupable
-  pickUpType: 1
-  HasBeenPickedUp: 1
---- !u!114 &2857339538051025187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6430901038694569406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d53fa1aba897043a4e7b9ab774612f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseLegs
-  speed: 15
-  maxSpeed: 33
-  linearDampening: 5
-  defaultDurability: 10
-  icon: {fileID: 1208040086343421634, guid: f53f11bc9c375364bb6695f004a5bbc3, type: 3}
 --- !u!1 &8533662921486513950
 GameObject:
   m_ObjectHideFlags: 0

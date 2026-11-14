@@ -12,9 +12,45 @@ public class BaseLegs : MonoBehaviour
     [SerializeField] private float linearDampening;
     public float LinearDampening => linearDampening;
     
-    [SerializeField] private float defaultDurability;
-    public float DefaultDurability => defaultDurability;
+    [SerializeField] private float durability;
+    [SerializeField] private bool IsInfiniteDurability;
     
     [Header("Visuals")] 
     [SerializeField] private Sprite icon;
+
+    [SerializeField] private SpriteRenderer spriteRender;
+    
+    private Pickupable pickupable;
+    
+    private void Start()
+    {
+        pickupable = GetComponent<Pickupable>();
+    }
+
+    public void BePickedUp(Transform newParent)
+    {
+        spriteRender.enabled = false;
+        pickupable.HasBeenPickedUp = true;
+        transform.SetParent(newParent);
+        transform.localPosition = Vector3.zero;
+    }
+    
+    public bool TakeDurabilityDamage(float damage)
+    {
+        if (IsInfiniteDurability) return false;
+        durability -= damage;
+        if (durability <= 0)
+        {
+            Destroy(gameObject);
+            return true;
+        }
+        return false;
+    }
+
+    public void DropSelf()
+    {
+        spriteRender.enabled = true;
+        pickupable.HasBeenPickedUp = false;
+        transform.SetParent(null);
+    }
 }
