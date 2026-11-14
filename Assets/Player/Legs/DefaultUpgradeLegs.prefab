@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6881190942599519786}
   - component: {fileID: 3656117460654106413}
   m_Layer: 7
-  m_Name: TestLegs1
+  m_Name: DefaultUpgradeLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d53fa1aba897043a4e7b9ab774612f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseLegs
-  speed: 40
-  maxSpeed: 60
-  linearDampening: 1
+  speed: 20
+  maxSpeed: 40
+  linearDampening: 6
   durability: 10
   IsInfiniteDurability: 0
   icon: {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
