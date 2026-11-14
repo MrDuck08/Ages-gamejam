@@ -790,6 +790,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4703331059133237998}
     m_Modifications:
+    - target: {fileID: 427024018331896019, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.285
+      objectReference: {fileID: 0}
+    - target: {fileID: 427024018331896019, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.473
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359610541593381208, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359610541593381208, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.171
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359610541593381208, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.491
+      objectReference: {fileID: 0}
     - target: {fileID: 4617600587325802662, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -801,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 5114781909034900481, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: weaponAnimator
       value: 
-      objectReference: {fileID: 5444750175130430150}
+      objectReference: {fileID: 6064684276937188028}
     - target: {fileID: 5114781909034900481, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -809,6 +829,14 @@ PrefabInstance:
     - target: {fileID: 6107486586187407544, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: m_Name
       value: PlayerWeapons
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851376908878571804, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384091784257087639, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7796198088834419215, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: leftHandTransform
@@ -821,7 +849,7 @@ PrefabInstance:
     - target: {fileID: 7796198088834419215, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: rightHandCurrentWeapon
       value: 
-      objectReference: {fileID: 8362218597183422442}
+      objectReference: {fileID: 5576013959301643873}
     - target: {fileID: 8170786957503524271, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -873,26 +901,96 @@ PrefabInstance:
     - target: {fileID: 9193590293224349066, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: weaponAnimator
       value: 
-      objectReference: {fileID: 8278400937683741517}
+      objectReference: {fileID: 6129095223676796557}
     - target: {fileID: 9193590293224349066, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: OnShoot.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8752862293361150253, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+    - {fileID: 4617600587325802662, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+    - {fileID: 4567274137186484870, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+    - {fileID: 436669962440344333, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 155908314206083677, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6064684276937188028}
+    - targetCorrespondingSourceObject: {fileID: 4270696042087570390, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6129095223676796557}
   m_SourcePrefab: {fileID: 100100000, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+--- !u!1 &698979204282005565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4270696042087570390, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+  m_PrefabInstance: {fileID: 3672626733935682539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6129095223676796557
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698979204282005565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be40027a25785b74a92cd6cef95e2f16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &3521303942671530422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 155908314206083677, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+  m_PrefabInstance: {fileID: 3672626733935682539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6064684276937188028
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3521303942671530422}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be40027a25785b74a92cd6cef95e2f16, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &4869444512779505220 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8170786957503524271, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
   m_PrefabInstance: {fileID: 3672626733935682539}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &5444750175130430150 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8752862293361150253, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
+--- !u!114 &5576013959301643873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9193590293224349066, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
   m_PrefabInstance: {fileID: 3672626733935682539}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6dd0c5722d4c1c987242c6fa67f0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
 --- !u!114 &6829254003496905188 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7796198088834419215, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
@@ -904,22 +1002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414b71a24ecc00c47a71fac3fc02ac30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeaponHandler
---- !u!95 &8278400937683741517 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4617600587325802662, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
-  m_PrefabInstance: {fileID: 3672626733935682539}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8362218597183422442 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5114781909034900481, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
-  m_PrefabInstance: {fileID: 3672626733935682539}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa6dd0c5722d4c1c987242c6fa67f0cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
 --- !u!1001 &6882939403466096729
 PrefabInstance:
   m_ObjectHideFlags: 0

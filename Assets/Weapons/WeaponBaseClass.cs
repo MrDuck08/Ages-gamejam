@@ -66,7 +66,6 @@ public abstract class WeaponBaseClass : MonoBehaviour
                 if(animationTime <= 0)
                 {
                     // När en animation är klar går den till idle
-                    Debug.Log("GO BACK");
                     weaponAnimator.SetTrigger("ShotDone");
                     startedAnimation = false;
                 }
