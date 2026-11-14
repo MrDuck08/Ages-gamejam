@@ -23,6 +23,7 @@ public class EnemyMove : MonoBehaviour
     void Update()
     {
 
+        if (target == null) return;
         Vector2 direction = target.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
 
