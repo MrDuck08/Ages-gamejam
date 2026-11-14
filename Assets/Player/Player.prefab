@@ -111,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   rb: {fileID: 7416384199970099309}
   sizeOfMouseConfineRing: 0.5
-  MoveSpeed: 35
-  MaxSpeed: 40
+  MoveSpeed: 15
+  MaxSpeed: 33
 --- !u!114 &8202362915607172050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 2
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
