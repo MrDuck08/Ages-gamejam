@@ -46,14 +46,12 @@ public abstract class WeaponBaseClass : MonoBehaviour
         {
             //WE CAN FIRE LAD!
             if(!doesNotLoseDurability) durability--;
-            Debug.Log(durability); 
             
             ShootWeapon();
             betweenShotsTimer = fireRate;
 
             if (durability <= 0)
             {
-                Debug.Log("Bitch!");
                 OnDurabilityRunOut?.Invoke(this);
             }
         }

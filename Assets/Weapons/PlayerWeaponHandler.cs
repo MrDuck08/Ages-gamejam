@@ -31,7 +31,6 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void SwapToWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand, bool fixForDurabilityRanOut)
     {
-        Debug.Log("Hello we are swapping zha weapon");
         WeaponBaseClass currentWeapon = whichHand ? rightHandCurrentWeapon : leftHandCurrentWeapon;
         
         currentWeapon.OnDurabilityRunOut.RemoveListener(OnWeaponRunOutOfDurability);
@@ -39,17 +38,18 @@ public class PlayerWeaponHandler : MonoBehaviour
         {
             currentWeapon.Drop();
         }
-
+        
         if (!whichHand)
         {
             leftHandCurrentWeapon = weaponToSwapTo;
+            currentWeapon = leftHandCurrentWeapon;
         }
         else
         {
             rightHandCurrentWeapon = weaponToSwapTo;
+            currentWeapon = rightHandCurrentWeapon;
         }
-
-        Debug.Log("Yea, we subscribing we hope");
+        
         currentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         currentWeapon.Enter();
     }
@@ -65,7 +65,6 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void OnWeaponRunOutOfDurability(WeaponBaseClass weaponThatDied)
     {
-        Debug.Log("BLEEEEH");
         SwapToWeapon(weaponThatDied != leftHandCurrentWeapon ? rightFistWeapon : leftFistWeapon, weaponThatDied != leftHandCurrentWeapon, true);
         Destroy(weaponThatDied.gameObject);
     }
