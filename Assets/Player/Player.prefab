@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpSystem
   weaponHandler: {fileID: 6829254003496905188}
-  playerMovement: {fileID: 2595022789540840622}
+  playerMovement: {fileID: 0}
   whatToPickUpIndicatorObject: {fileID: 1476195999963402097}
   pickUpRadius: 5
   layermaskOfPickupAbles:
@@ -491,8 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   health: 25
   invicibilityTime: 1
-  commonWeaponsList: []
-  rareWeaponsList: []
+  weaponsObjList: []
   OnDeath:
     m_PersistentCalls:
       m_Calls:
