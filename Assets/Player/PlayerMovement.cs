@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [NonSerialized] public InputAction moveAction;
     [NonSerialized] public InputAction lookAction;
     
+    private BaseLegs currentLegs;
+    [SerializeField] private BaseLegs baseLegs;
+    private float legsDurability;
+    
     private Vector2 virtualMousePosition;
     [Header("Mouse aiming")]
     [Tooltip("Basically, how mouse movement works in this game is that it confines a virtual mouse to the size of a circle around the player, this determines that ones size. Recommended size is 0.5f.")]
@@ -18,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private Camera cam;
     private void Start()
     {
+        SetNewLegs(baseLegs);
+        
         cam = Camera.main;
         moveAction =  InputSystem.actions.FindAction("Move");
         lookAction = InputSystem.actions.FindAction("Look");
@@ -29,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    [SerializeField] private float MoveSpeed;
-    [SerializeField] private float MaxSpeed;
+    private float MoveSpeed;
+    private float MaxSpeed;
     private void FixedUpdate()
     {
         //Normal Movement
@@ -82,5 +88,15 @@ public class PlayerMovement : MonoBehaviour
         
         float angleRadians = Mathf.Atan2(virtualMousePosition.y, virtualMousePosition.x);
         transform.rotation = Quaternion.Euler(0, 0, angleRadians * Mathf.Rad2Deg - 90f);
+    }
+
+    public void SetNewLegs(BaseLegs legs)
+    {
+        currentLegs = legs;
+        legsDurability = legs.DefaultDurability;
+
+        rb.linearDamping = legs.LinearDampening;
+        MoveSpeed = legs.Speed;
+        MaxSpeed = legs.MaxSpeed;
     }
 }

@@ -1,5 +1,6 @@
 public enum PickupableType
 {
     Weapon,
-    TheDifferentPiecesOfTheMechIDontRemember,
+    Legs,
+    Hull,
 }
