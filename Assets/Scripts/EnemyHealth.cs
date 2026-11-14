@@ -13,10 +13,13 @@ public class EnemyHealth : Health
     [SerializeField] private int chanceForDrop = 20;
 
     private EnemyMove enemyMove;
+    TestSpawner spawner;
     
     private void Start()
     {
         enemyMove = GetComponent<EnemyMove>();
+
+        spawner = FindAnyObjectByType<TestSpawner>();
     }
     
     public override void TakeDamage(float damage, float staggerTime)
@@ -27,7 +30,7 @@ public class EnemyHealth : Health
 
     public override void DestroySelf()
     {
-        int dropChanse =  Random.Range(0, chanceForDrop);
+        int dropChanse =  Random.Range(0, chanceForDrop + spawner.decreaseChanceForSpawn);
 
         // Den ska droppa
         if(dropChanse == 0)
