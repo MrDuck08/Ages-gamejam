@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 5b7a655a559dc4548a82e289b0fee730
+guid: 1fc7d1dd94c28094d969c28a9322ce09
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2926485714544993325
-    second: Spr_RifleShoot_1_0
+      213: -1384833515560849859
+    second: Spr_ShotgunShoot_2_0
+  - first:
+      213: -3295275555111369392
+    second: Spr_ShotgunShoot_2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_RifleShoot_1_0
+      name: Spr_ShotgunShoot_2_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 12
-        width: 54
-        height: 199
+        x: 33
+        y: 46
+        width: 133
+        height: 171
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3db5a407fb80367d0800000000000000
-      internalID: -2926485714544993325
+      spriteID: d3ea0f7314518cce0800000000000000
+      internalID: -1384833515560849859
       vertices: []
       indices: 
       edges: []
@@ -125,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a736b453702adc54d9420cedcf3376f3
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +138,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Spr_RifleShoot_1_0: -2926485714544993325
+      Spr_ShotgunShoot_2_0: -1384833515560849859
+      Spr_ShotgunShoot_2_1: -3295275555111369392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

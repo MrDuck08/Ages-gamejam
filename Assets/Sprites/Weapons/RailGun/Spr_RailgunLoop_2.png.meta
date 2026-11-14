@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 27095a4f8689b734794f74e1f4cba7da
+guid: ef5a9de8a5921314aa1dd5484059a05c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2269103227765913243
-    second: Spr_RifleShoot_5_0
-  - first:
-      213: -5772707935858569586
-    second: Spr_RifleShoot_5_1
+      213: -2371013841575732241
+    second: Spr_RailgunLoop_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_RifleShoot_5_0
+      name: Spr_RailgunLoop_2_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 21
-        width: 70
-        height: 205
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 75
+        y: 41
+        width: 100
+        height: 280
+      alignment: 9
+      pivot: {x: 0.5, y: 0.28928572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b96fda90d597d7f10800000000000000
-      internalID: 2269103227765913243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spr_RifleShoot_5_1
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 169
-        width: 23
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8e421ba7b833efa0800000000000000
-      internalID: -5772707935858569586
+      spriteID: feb18572977781fd0800000000000000
+      internalID: -2371013841575732241
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 51699de3d8b1d4745871350641098daf
     internalID: 0
     vertices: []
     indices: 
@@ -158,10 +133,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":250.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Spr_RifleShoot_5_0: 2269103227765913243
-      Spr_RifleShoot_5_1: -5772707935858569586
+      Spr_RailgunLoop_2_0: -2371013841575732241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

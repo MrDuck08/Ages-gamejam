@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 3f5f48e77582b79459ad47873f5ccc4a
+guid: 455b2f3842a747d44982014d73d9bdcb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8421930596362092091
-    second: Spr_ShotgunShoot_3_0
+      213: -5880501640727339361
+    second: Fist_Puanch2_0
   - first:
-      213: 200621605525328141
-    second: Spr_ShotgunShoot_3_1
+      213: -5806526954552115117
+    second: Fist_Puanch2_1
+  - first:
+      213: -8763733935411833519
+    second: Fist_Puanch2_2
+  - first:
+      213: 4631741672688354129
+    second: Fist_Puanch2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +109,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_ShotgunShoot_3_0
+      name: Fist_Puanch2_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 48
-        width: 153
-        height: 183
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 79
+        y: 37
+        width: 42
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3ef72f8145b0e470800000000000000
-      internalID: 8421930596362092091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spr_ShotgunShoot_3_1
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 158
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d011b9b8940c8c200800000000000000
-      internalID: 200621605525328141
+      spriteID: f9e585bf9e2446ea0800000000000000
+      internalID: -5880501640727339361
       vertices: []
       indices: 
       edges: []
@@ -150,7 +134,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 09a180ed2ceae8b48b41aa4986939287
     internalID: 0
     vertices: []
     indices: 
@@ -158,10 +142,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":200.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Spr_ShotgunShoot_3_0: 8421930596362092091
-      Spr_ShotgunShoot_3_1: 200621605525328141
+      Fist_Puanch2_0: -5880501640727339361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

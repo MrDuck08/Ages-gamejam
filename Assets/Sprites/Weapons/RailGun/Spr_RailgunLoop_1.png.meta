@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 639cd12d05e852247962f668e0c84e3b
+guid: 0c0aae41763dfae479dff2b7ae2a6cbe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 731708169303738914
-    second: Spr_RifleShoot_4_0
+      213: -4108038252174119852
+    second: Spr_RailgunLoop_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_RifleShoot_4_0
+      name: Spr_RailgunLoop_1_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 19
-        width: 73
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 75
+        y: 45
+        width: 100
+        height: 275
+      alignment: 9
+      pivot: {x: 0.4950495, y: 0.28985506}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22ac99604bc872a00800000000000000
-      internalID: 731708169303738914
+      spriteID: 45ce17799f05df6c0800000000000000
+      internalID: -4108038252174119852
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e9838ede2f102b041b713c77c7262972
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +133,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":250.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Spr_RifleShoot_4_0: 731708169303738914
+      Spr_RailgunLoop_1_0: -4108038252174119852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
