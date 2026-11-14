@@ -103,12 +103,12 @@ TextureImporter:
       name: Spr_RailgunLoop_2_0
       rect:
         serializedVersion: 2
-        x: 75
-        y: 41
-        width: 100
+        x: 0
+        y: 0
+        width: 114
         height: 280
       alignment: 9
-      pivot: {x: 0.5, y: 0.28928572}
+      pivot: {x: 0.50355357, y: 0.31302077}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

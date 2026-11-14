@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 3787717421997916909}
   - component: {fileID: 2121579522775194201}
   - component: {fileID: 3828554486276522762}
+  - component: {fileID: 7557564048396253609}
   m_Layer: 7
   m_Name: ShotgunWeapon
   m_TagString: Untagged
@@ -126,6 +127,7 @@ MonoBehaviour:
   - {fileID: 2188467278047593985}
   fireRate: 0.7
   defaultDurability: 15
+  weaponAnimator: {fileID: 7557564048396253609}
   doesNotLoseDurability: 0
   weaponIcon: {fileID: 1994507137525636367, guid: 54b6d7666046e584e8a7828867c21107, type: 3}
   OnDurabilityRunOut:
@@ -153,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   pickUpType: 0
+  scrapValue: 0
   HasBeenPickedUp: 0
 --- !u!61 &2121579522775194201
 BoxCollider2D:
@@ -259,6 +262,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &7557564048396253609
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443372268885037905}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88dfb6a933ceb29418bbafd6eca263c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1433485928667536756
 GameObject:
   m_ObjectHideFlags: 0

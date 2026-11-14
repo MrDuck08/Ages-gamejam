@@ -103,12 +103,12 @@ TextureImporter:
       name: Spr_RailgunLoop_5_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 36
-        width: 115
-        height: 286
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 113
+        height: 284
+      alignment: 9
+      pivot: {x: 0.50727224, y: 0.32408562}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4961c83b4e71fa541bc8d8a9f5c69179
     internalID: 0
     vertices: []
     indices: 
