@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PrefabTypeWeapon : WeaponBaseClass
 {
@@ -18,7 +19,8 @@ public class PrefabTypeWeapon : WeaponBaseClass
             }
         }
     }
-    
+
+    public UnityEvent OnShoot;
     private void OnDrawGizmos()
     {
         foreach (Transform shootPoint in shootPoints)
