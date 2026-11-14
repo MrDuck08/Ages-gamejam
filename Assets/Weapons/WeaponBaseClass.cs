@@ -24,7 +24,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
     private Pickupable pickupable;
     
-    private float betweenShotsTimer;
+    [SerializeField] private float betweenShotsTimer; //TEMP FOR VISUALS
     private float durability;
     public float Durability => durability;
 
@@ -41,12 +41,12 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
     public void Update()
     {
-        if (betweenShotsTimer < 0) betweenShotsTimer -= Time.deltaTime;
+        if (betweenShotsTimer > 0) betweenShotsTimer -= Time.deltaTime;
     }
 
     public void InputTryShootWeapon()
     {
-        if (betweenShotsTimer >= 0)
+        if (betweenShotsTimer <= 0)
         {
             //WE CAN FIRE LAD!
             ShootWeapon();
