@@ -11,19 +11,24 @@ public class BaseLegs : MonoBehaviour
     [Tooltip("Making this lower will make movement floatier")]
     [SerializeField] private float linearDampening;
     public float LinearDampening => linearDampening;
-    
-    [SerializeField] private float durability;
+
+    [SerializeField] private float defaultDurability;
+    private float durability;
     [SerializeField] private bool IsInfiniteDurability;
+    public float Durability => durability;
+    public float DefaultDurability => defaultDurability;
     
     [Header("Visuals")] 
     [SerializeField] private Sprite icon;
-
+    public Sprite Icon => icon;
+    
     [SerializeField] private SpriteRenderer spriteRender;
     
     private Pickupable pickupable;
     
     private void Start()
     {
+        durability = DefaultDurability;
         pickupable = GetComponent<Pickupable>();
     }
 

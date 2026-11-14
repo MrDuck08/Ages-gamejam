@@ -13,6 +13,9 @@ public abstract class WeaponBaseClass : MonoBehaviour
     [Tooltip("This is just for the fist.")]
     [SerializeField] private bool doesNotLoseDurability;
 
+    [Header("UI visuals")] 
+    public Sprite weaponIcon;
+    
     public float DefaultDurability => defaultDurability; //for UI
     public bool DoesNotLoseDurability => doesNotLoseDurability; //for UI
     
@@ -23,6 +26,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
     
     private float betweenShotsTimer;
     private float durability;
+    public float Durability => durability;
 
     private void Start()
     {
