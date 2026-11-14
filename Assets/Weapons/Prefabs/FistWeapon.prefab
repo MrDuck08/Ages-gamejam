@@ -48,12 +48,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
   shootPoints:
   - {fileID: 4609904249052398320}
-  fireRate: 0.2
+  fireRate: 0.4
   defaultDurability: 100
   doesNotLoseDurability: 1
+  weaponIcon: {fileID: 0}
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
+  betweenShotsTimer: 0
   shootOutForce: 0
   bulletPrefab: {fileID: 950402744807110711, guid: b36e0d55599b6c74eaeda4488c508abb, type: 3}
 --- !u!114 &8492105591188407690

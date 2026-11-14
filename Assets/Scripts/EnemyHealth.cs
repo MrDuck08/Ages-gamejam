@@ -38,7 +38,7 @@ public class EnemyHealth : Health
             int whatToDrop = Random.Range(0, 5);
 
             //Drop weapon
-            if(whatToDrop <= 2)
+            if(whatToDrop <= 3)
             {
                 int rareWeaponDropList = Random.Range(0, 3);
 
