@@ -2509,8 +2509,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1525637981}
   - component: {fileID: 1525637982}
+  - component: {fileID: 1525637983}
   m_Layer: 0
-  m_Name: FixerForMouse
+  m_Name: FixerForMouseAndBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,6 +2545,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeMouseVisibilityAndLockScript
   UnlockMouse: 1
+--- !u!114 &1525637983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525637980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ed82de8b9f94341aaf07f8885a3ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1598605637
 GameObject:
   m_ObjectHideFlags: 0

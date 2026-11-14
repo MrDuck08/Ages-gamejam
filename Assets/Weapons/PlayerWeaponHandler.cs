@@ -43,10 +43,13 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void ShootWeaponLeftHand(InputAction.CallbackContext context)
     {
+        Debug.Log("Cuck fuck!");
+        if(context.performed) Debug.Log("We got an input trying to shoot a weapon!");
         if(context.performed) leftHandCurrentWeapon.InputTryShootWeapon();
     }
     public void ShootWeaponRightHand(InputAction.CallbackContext context)
     {
+        if(context.performed) Debug.Log("We got an input trying to shoot a weapon!");
         if(context.performed) rightHandCurrentWeapon.InputTryShootWeapon();
     }
 

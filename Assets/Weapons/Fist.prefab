@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4103357967305380409}
   m_Layer: 0
   m_Name: Fist
-  m_TagString: Untagged
+  m_TagString: Temporaries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,12 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15913701d6dd06a4abf6a2477460471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletScript
+  damage: 800
+  staggerTime: 0.1
   whatToHitLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  damage: 800
-  pierce: 18
-  range: 0.4
+  doNotDestroySelfUponHit: 0
 --- !u!114 &4103357967305380409
 MonoBehaviour:
   m_ObjectHideFlags: 0

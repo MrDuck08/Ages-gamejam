@@ -23,6 +23,7 @@ public class PlayerScrapAndBagManager : MonoBehaviour
         }
 
         Singleton = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PutThingInBag(Pickupable thingToPutInBag)
@@ -32,9 +33,9 @@ public class PlayerScrapAndBagManager : MonoBehaviour
         thingToPutInBag.transform.SetParent(transform);
     }
 
-    public void TurnItemIntoScrap(Pickupable thingToScrap)
+    public void TurnItemIntoScrap(Pickupable thingToScrap, bool halfCost = false)
     {
-        scrapCount += thingToScrap.ScrapValue;
+        scrapCount += thingToScrap.ScrapValue / (halfCost ? 2 : 1);
         if (thingsStoredInBag.Contains(thingToScrap)) thingsStoredInBag.Remove(thingToScrap);
         
         Destroy(thingToScrap.gameObject);

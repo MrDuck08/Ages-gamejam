@@ -82,14 +82,18 @@ MonoBehaviour:
   - {fileID: 2845624188167212289}
   fireRate: 0.1
   defaultDurability: 2
+  weaponAnimator: {fileID: 0}
   doesNotLoseDurability: 0
+  weaponIcon: {fileID: 0}
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
+  betweenShotsTimer: 0
   shotDistance: 5
   damage: 1
   staggerTime: 1.5
   raycastAll: 0
+  trailEffectObj: {fileID: 0}
   layersToCheckFiringFor:
     serializedVersion: 2
     m_Bits: 64
@@ -106,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   pickUpType: 0
+  scrapValue: 0
   HasBeenPickedUp: 1
 --- !u!61 &5111187981698128438
 BoxCollider2D:

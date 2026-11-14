@@ -80,6 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6dd0c5722d4c1c987242c6fa67f0cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
+  weaponInfoClass:
+    durability: 0
+    prefab: {fileID: 4938346672409831563}
   shootPoints:
   - {fileID: 9146965769709988895}
   fireRate: 0.15

@@ -6,14 +6,16 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Pickupable))]
 public abstract class WeaponBaseClass : MonoBehaviour
 {
-    [Header("Base settings")]
+    [Header("Base settings")] 
+    [SerializeField] private WeaponObjectInfoClass weaponInfoClass;
+    
     [SerializeField] protected List<Transform> shootPoints = new();
     [SerializeField] private float fireRate;
     [SerializeField] private float defaultDurability;
     [SerializeField] private Animator weaponAnimator;
-    bool startedAnimation = false;
-    float animationTime = 0;
-    float fireAnimationTime = 0;
+    private bool startedAnimation = false;
+    private float animationTime = 0;
+    private float fireAnimationTime = 0;
     [Tooltip("This is just for the fist.")]
     [SerializeField] private bool doesNotLoseDurability;
 
@@ -23,18 +25,17 @@ public abstract class WeaponBaseClass : MonoBehaviour
     public float DefaultDurability => defaultDurability; //for UI
     public bool DoesNotLoseDurability => doesNotLoseDurability; //for UI
     
-    
     public UnityEvent<WeaponBaseClass>  OnDurabilityRunOut = new();
 
     private Pickupable pickupable;
     
     [SerializeField] private float betweenShotsTimer; //TEMP FOR VISUALS
-    private float durability;
-    public float Durability => durability;
+    public float Durability => weaponInfoClass.durability;
 
     private void Start()
     {
-        durability = defaultDurability;
+        tag = "Weapon";
+        weaponInfoClass.durability = defaultDurability;
         pickupable = GetComponent<Pickupable>();
 
         AnimationClip[] clips = weaponAnimator.runtimeAnimatorController.animationClips;
@@ -65,7 +66,6 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
                 if(animationTime <= 0)
                 {
-                    // När en animation är klar går den till idle
                     weaponAnimator.SetTrigger("ShotDone");
                     startedAnimation = false;
                 }
@@ -100,8 +100,8 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
     public void TakeDurabilityDamage(float damage)
     {
-        if(!doesNotLoseDurability) durability -= damage;
-        if (durability <= 0)
+        if(!doesNotLoseDurability) weaponInfoClass.durability -= damage;
+        if (weaponInfoClass.durability <= 0)
         {
             OnDurabilityRunOut?.Invoke(this);
         }
