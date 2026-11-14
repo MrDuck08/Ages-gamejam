@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerWeaponHandler : MonoBehaviour
 {
     [Tooltip("This one exists outside of the weapon stack as we do not want it to be swapable to unless you run out of durability for your current weapon.")]
-    [SerializeField] private WeaponBaseClass fistWeapon;
-    
+    [SerializeField] private WeaponBaseClass leftFistWeapon;
+    [SerializeField] private WeaponBaseClass rightFistWeapon;
+
     [Space]
     [Space]
     
@@ -30,10 +31,11 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void SwapToWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand, bool fixForDurabilityRanOut)
     {
+        Debug.Log("Hello we are swapping zha weapon");
         WeaponBaseClass currentWeapon = whichHand ? rightHandCurrentWeapon : leftHandCurrentWeapon;
         
         currentWeapon.OnDurabilityRunOut.RemoveListener(OnWeaponRunOutOfDurability);
-        if (currentWeapon != fistWeapon && !fixForDurabilityRanOut)
+        if (!currentWeapon.DoesNotLoseDurability && !fixForDurabilityRanOut)
         {
             currentWeapon.Drop();
         }
@@ -46,7 +48,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         {
             rightHandCurrentWeapon = weaponToSwapTo;
         }
-        
+
+        Debug.Log("Yea, we subscribing we hope");
         currentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         currentWeapon.Enter();
     }
@@ -62,7 +65,8 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void OnWeaponRunOutOfDurability(WeaponBaseClass weaponThatDied)
     {
-        SwapToWeapon(fistWeapon, weaponThatDied != leftHandCurrentWeapon, true);
+        Debug.Log("BLEEEEH");
+        SwapToWeapon(weaponThatDied != leftHandCurrentWeapon ? rightFistWeapon : leftFistWeapon, weaponThatDied != leftHandCurrentWeapon, true);
         Destroy(weaponThatDied.gameObject);
     }
 }
