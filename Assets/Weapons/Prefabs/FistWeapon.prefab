@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   pickUpType: 0
+  scrapValue: 0
   HasBeenPickedUp: 1
 --- !u!95 &5445483032934403969
 Animator:

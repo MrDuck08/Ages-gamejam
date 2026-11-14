@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   pickUpType: 1
+  scrapValue: 0
   HasBeenPickedUp: 1
 --- !u!114 &2960900281843506272
 MonoBehaviour:
@@ -318,7 +319,7 @@ GameObject:
   - component: {fileID: 1324468522729886683}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -749,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c96dd573583f940a0e9a484131a4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScrapAndBagManager
-  thingsStoredInBag: []
+  winScoreThreshold: 0
 --- !u!1 &8533662921486513950
 GameObject:
   m_ObjectHideFlags: 0

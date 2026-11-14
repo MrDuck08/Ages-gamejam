@@ -13,13 +13,13 @@ public class EnemyHealth : Health
     [SerializeField] private int chanceForDrop = 20;
 
     private EnemyMove enemyMove;
-    TestSpawner spawner;
+    EnemySpawner spawner;
     
     private void Start()
     {
         enemyMove = GetComponent<EnemyMove>();
 
-        spawner = FindAnyObjectByType<TestSpawner>();
+        spawner = FindAnyObjectByType<EnemySpawner>();
     }
     
     public override void TakeDamage(float damage, float staggerTime)
