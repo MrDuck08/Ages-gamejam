@@ -36,7 +36,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
 
     public virtual void Enter()
     {
-        betweenShotsTimer = fireRate;
+        betweenShotsTimer = 0.05f;
     }
 
     public void Update()
