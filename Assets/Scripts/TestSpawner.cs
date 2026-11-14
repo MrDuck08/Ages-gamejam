@@ -10,7 +10,7 @@ public class TestSpawner : MonoBehaviour
     [SerializeField] Vector2 maxSpawnPos = Vector2.zero;
 
 
-    float enemySpawnInterval = 0.4f;
+    float enemySpawnInterval = 0.6f;
     int maxEnemySpawn = 10;
 
     float difficultyIncreaseInterval = 5;
@@ -19,7 +19,7 @@ public class TestSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnEnemyRoutine());
-        //StartCoroutine(IncreaseDifficultyRoutine());
+        StartCoroutine(IncreaseDifficultyRoutine());
     }
 
 
@@ -58,14 +58,14 @@ public class TestSpawner : MonoBehaviour
             case 2:
 
                 xSpawnPos = Random.Range(-maxSpawnPos.x, maxSpawnPos.x);
-                ySpawnPos = Random.Range(-minSpawnPos.y, -maxSpawnPos.y);
+                ySpawnPos = Random.Range(-maxSpawnPos.y, -minSpawnPos.y);
 
                 break;
 
             // Left
             case 3:
 
-                xSpawnPos = Random.Range(-minSpawnPos.x, -maxSpawnPos.x);
+                xSpawnPos = Random.Range(-maxSpawnPos.x, -minSpawnPos.x);
                 ySpawnPos = Random.Range(-maxSpawnPos.y, maxSpawnPos.y);
 
                 break;
@@ -85,6 +85,11 @@ public class TestSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(difficultyIncreaseInterval);
 
+        if(enemySpawnInterval > 0.2f)
+        {
+            enemySpawnInterval -= 0.1f;
 
+            StartCoroutine(IncreaseDifficultyRoutine());
+        }
     }
 }
