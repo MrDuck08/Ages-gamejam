@@ -83,8 +83,8 @@ public class PickUpSystem : MonoBehaviour
         
         if (currentThingWeCanTryToPickUp != null)
         {
-            //try to do that. Put it in the bag
-            Debug.Log("We tried to put it in the bag.");
+            //put it in the bag
+            PlayerScrapAndBagManager.Singleton.PutThingInBag(currentThingWeCanTryToPickUp);
         }
     }
 
