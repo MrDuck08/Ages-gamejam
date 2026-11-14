@@ -74,6 +74,7 @@ public class TestSpawner : MonoBehaviour
         }
 
 
+        if (player == null) yield return null;
         GameObject spawnedObject = Instantiate(enemyObj);
         spawnedObject.transform.position = new Vector2(player.transform.position.x + xSpawnPos, player.transform.position.y + ySpawnPos);
 
