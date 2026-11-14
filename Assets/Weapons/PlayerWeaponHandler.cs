@@ -30,13 +30,22 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void SwapToWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand, bool fixForDurabilityRanOut)
     {
-        WeaponBaseClass currentWeapon = whichHand ? leftHandCurrentWeapon : rightHandCurrentWeapon;
+        WeaponBaseClass currentWeapon = whichHand ? rightHandCurrentWeapon : leftHandCurrentWeapon;
         
         currentWeapon.OnDurabilityRunOut.RemoveListener(OnWeaponRunOutOfDurability);
-        if(currentWeapon != fistWeapon && !fixForDurabilityRanOut) currentWeapon.Drop();
+        if (currentWeapon != fistWeapon && !fixForDurabilityRanOut)
+        {
+            currentWeapon.Drop();
+        }
 
-        if (!whichHand) leftHandCurrentWeapon = weaponToSwapTo;
-        else rightHandCurrentWeapon = weaponToSwapTo;
+        if (!whichHand)
+        {
+            leftHandCurrentWeapon = weaponToSwapTo;
+        }
+        else
+        {
+            rightHandCurrentWeapon = weaponToSwapTo;
+        }
         
         currentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         currentWeapon.Enter();

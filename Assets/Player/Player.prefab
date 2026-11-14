@@ -256,7 +256,7 @@ MonoBehaviour:
   sizeOfMouseConfineRing: 0.5
   MoveSpeed: 15
   MaxSpeed: 33
-  AimType: 0
+  AimType: 1
 --- !u!114 &8202362915607172050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +417,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 50733eb1-dfee-44bd-ad0e-d6e6c9231161
     m_ActionName: Player/RightFire
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3644594545179622100}
+        m_TargetAssemblyTypeName: PickUpSystem, Assembly-CSharp
+        m_MethodName: TryPickUpLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9e553300-5bf6-4d0c-a661-bc1dbf770282
+    m_ActionName: 'Player/PickUpLeft[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3644594545179622100}
+        m_TargetAssemblyTypeName: PickUpSystem, Assembly-CSharp
+        m_MethodName: TryPickUpRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5267387e-b90f-4c35-86be-3338df0fe952
+    m_ActionName: 'Player/PickUpRight[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3644594545179622100}
+        m_TargetAssemblyTypeName: PickUpSystem, Assembly-CSharp
+        m_MethodName: TryPickUpForBag
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d23fe67e-72c4-4a77-8b4b-f178763c4d82
+    m_ActionName: 'Player/PickUpIntoBag[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
