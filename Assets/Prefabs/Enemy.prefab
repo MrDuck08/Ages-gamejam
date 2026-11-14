@@ -109,9 +109,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   health: 5
   invicibilityTime: 1
-  weaponsObjList:
-  - {fileID: 443372268885037905, guid: 673f2e6282b781747ac12bf4310e4268, type: 3}
+  commonWeaponsList:
   - {fileID: 4938346672409831563, guid: 3b19171fa25344e47b06ac6db5a71779, type: 3}
+  - {fileID: 443372268885037905, guid: 673f2e6282b781747ac12bf4310e4268, type: 3}
+  rareWeaponsList:
   - {fileID: 4781979722556429279, guid: 628fe07873e1f8c4692746d96b75860b, type: 3}
   OnDeath:
     m_PersistentCalls:
