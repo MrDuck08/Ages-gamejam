@@ -27,6 +27,7 @@ public class BaseHull : MonoBehaviour
         pickupable.HasBeenPickedUp = true;
         transform.SetParent(newParent);
         transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
     }
     
     public float CalculateHowMuchLeftOver(float damage)
