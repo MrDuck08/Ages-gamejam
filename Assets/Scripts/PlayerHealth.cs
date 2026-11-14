@@ -38,6 +38,7 @@ public class PlayerHealth : Health
     {
         if (!invincible)
         {
+
             float damageCalculating = damage;
             
             //hull will mitigate damage only for health taking

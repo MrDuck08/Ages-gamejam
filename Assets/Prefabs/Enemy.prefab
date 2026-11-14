@@ -210,6 +210,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commonWeaponsList: []
-  rareWeaponsList: []
+  commonWeaponsList:
+  - {fileID: 4938346672409831563, guid: 3b19171fa25344e47b06ac6db5a71779, type: 3}
+  - {fileID: 443372268885037905, guid: 673f2e6282b781747ac12bf4310e4268, type: 3}
+  rareWeaponsList:
+  - {fileID: 4781979722556429279, guid: 628fe07873e1f8c4692746d96b75860b, type: 3}
+  hullDropsList:
+  - {fileID: 8108290997947951762, guid: 4289c666a76d5f54cb643acd51261ea7, type: 3}
+  legsDropList:
+  - {fileID: 7339919373720579633, guid: 78419dd7452054841b54866d00e7363f, type: 3}
+  - {fileID: 7404129216366114795, guid: 1a4de47854178ce45b8f237a383ea57a, type: 3}
+  - {fileID: 5808648373751779142, guid: 634c5a3c11c006a439a6c2fecb9f7e2d, type: 3}
   chanceForDrop: 20
