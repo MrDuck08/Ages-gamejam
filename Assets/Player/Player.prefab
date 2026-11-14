@@ -511,7 +511,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   invicibilityTime: 1
-  damageFromTouchingEnemyForOneSecond: 0
+  damageFromTouchingEnemyForOneSecond: 100
   layersWeCanTakeDamageFrom:
     serializedVersion: 2
     m_Bits: 64

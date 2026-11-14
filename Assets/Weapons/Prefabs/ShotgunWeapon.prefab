@@ -127,6 +127,7 @@ MonoBehaviour:
   fireRate: 1.3
   defaultDurability: 15
   doesNotLoseDurability: 0
+  weaponIcon: {fileID: 1994507137525636367, guid: 54b6d7666046e584e8a7828867c21107, type: 3}
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
@@ -190,7 +191,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.85, y: 1.51}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -247,8 +248,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1707881335, guid: 5edd172eb57d5b9418ec65badcc8bda7, type: 3}
-  m_Color: {r: 0.9339623, g: 0.15419187, b: 0.15419187, a: 1}
+  m_Sprite: {fileID: 1994507137525636367, guid: 54b6d7666046e584e8a7828867c21107, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
