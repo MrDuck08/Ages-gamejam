@@ -15,4 +15,9 @@ public class scenechanger : MonoBehaviour
         }
         SceneManager.LoadScene(scene);
     }
+
+    public void SetAim(int type)
+    {
+        GameSettings.AimType = type;
+    }
 }

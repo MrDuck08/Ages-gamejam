@@ -21,16 +21,12 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main;
         moveAction =  InputSystem.actions.FindAction("Move");
         lookAction = InputSystem.actions.FindAction("Look");
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        
-        if (rb == null)
+        AimType = GameSettings.AimType;
+        if (AimType == 1)
         {
-            Debug.Log(this.gameObject.name + " has no rigidbody attached");
-            rb = GetComponent<Rigidbody2D>();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
-
     }
 
     [SerializeField] private float MoveSpeed;
@@ -71,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-
+    
     [SerializeField] private int AimType;
     private void Aim(Transform trans, Vector3 pos) // rotates the whole player towards the mouse
     {
