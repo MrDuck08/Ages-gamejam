@@ -121,11 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15913701d6dd06a4abf6a2477460471d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletScript
-  damage: 800
   whatToHitLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  doNotDestroySelfUponHit: 1
+  damage: 800
+  pierce: 18
+  range: 0.4
 --- !u!114 &4103357967305380409
 MonoBehaviour:
   m_ObjectHideFlags: 0

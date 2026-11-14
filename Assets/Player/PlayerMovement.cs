@@ -14,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Mouse aiming")]
     [Tooltip("Basically, how mouse movement works in this game is that it confines a virtual mouse to the size of a circle around the player, this determines that ones size. Recommended size is 0.5f.")]
     [SerializeField] private float sizeOfMouseConfineRing;
-    
+
+    private Camera cam;
     private void Start()
     {
+        cam = Camera.main;
         moveAction =  InputSystem.actions.FindAction("Move");
         lookAction = InputSystem.actions.FindAction("Look");
 
@@ -50,11 +52,30 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearVelocity = velocityToSet;
         
-        DoLookWithMouse(lookAction.ReadValue<Vector2>());
-        
         //Tank Movement
         //rb.AddForce(new Vector2(0, moveAction.ReadValue<Vector2>().y) * MoveSpeed);
         //rb.AddTorque(moveAction.ReadValue<Vector2>().x * RotateSpeed * -1);
+        switch (AimType)
+        {
+            case 0:
+                Vector3 mouseWorldPosition = cam.ScreenToWorldPoint(new Vector3(
+                    Mouse.current.position.ReadValue().x,
+                    Mouse.current.position.ReadValue().y,
+                    cam.nearClipPlane // Set Z to the camera's near clip plane
+                ));
+                Aim(transform, mouseWorldPosition);
+                break;
+            case 1:
+                DoLookWithMouse(lookAction.ReadValue<Vector2>());
+                break;
+        }
+        
+    }
+
+    [SerializeField] private int AimType;
+    private void Aim(Transform trans, Vector3 pos) // rotates the whole player towards the mouse
+    {
+        trans.rotation = Quaternion.Euler(0,0,0) * Quaternion.LookRotation(Vector3.forward, pos - transform.position);
     }
     
     private void DoLookWithMouse(Vector2 mouseInput)
