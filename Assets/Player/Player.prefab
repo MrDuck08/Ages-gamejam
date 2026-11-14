@@ -205,7 +205,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6829254003496905188}
         m_TargetAssemblyTypeName: PlayerWeaponHandler, Assembly-CSharp
-        m_MethodName: ShootWeapon
+        m_MethodName: ShootWeaponLeftHand
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -257,6 +257,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6829254003496905188}
+        m_TargetAssemblyTypeName: PlayerWeaponHandler, Assembly-CSharp
+        m_MethodName: ShootWeaponRightHand
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 50733eb1-dfee-44bd-ad0e-d6e6c9231161
+    m_ActionName: Player/RightFire
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -404,14 +420,6 @@ PrefabInstance:
     - target: {fileID: 8170786957503524271, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8872819937081233404, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
-      propertyPath: fireRate
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8872819937081233404, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
-      propertyPath: shootOutForce
-      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

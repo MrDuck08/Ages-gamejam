@@ -25,9 +25,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "LeftFire",
                     "type": "Button",
                     "id": "6c2ab1b8-8984-453a-af3d-a3c78ae1679a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RightFire",
+                    "type": "Button",
+                    "id": "50733eb1-dfee-44bd-ad0e-d6e6c9231161",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -207,7 +216,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "LeftFire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23e97ffb-454e-47b3-b34f-28a9bba84d93",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightFire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

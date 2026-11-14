@@ -12,14 +12,19 @@ public abstract class WeaponBaseClass : MonoBehaviour
     [Tooltip("This is just for the fist.")]
     [SerializeField] private bool doesNotLoseDurability;
 
-    public float DefaultDurability => defaultDurability;
-    public bool DoesNotLoseDurability => doesNotLoseDurability;
+    public float DefaultDurability => defaultDurability; //for UI
+    public bool DoesNotLoseDurability => doesNotLoseDurability; //for UI
     
     
     public UnityEvent<WeaponBaseClass>  OnDurabilityRunOut = new();
     
     private float betweenShotsTimer;
     private float durability;
+
+    private void Start()
+    {
+        durability = defaultDurability;
+    }
 
     public virtual void Enter()
     {

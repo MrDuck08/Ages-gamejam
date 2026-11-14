@@ -49,6 +49,10 @@ MonoBehaviour:
   - {fileID: 5377465693238048848}
   fireRate: 0.1
   defaultDurability: 2
+  doesNotLoseDurability: 0
+  OnDurabilityRunOut:
+    m_PersistentCalls:
+      m_Calls: []
   shotDistance: 5
   damage: 1
   layersToCheckFiringFor:
@@ -101,9 +105,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
   shootPoints:
   - {fileID: 2426686521463251286}
-  fireRate: 0.2
+  fireRate: 0.15
   defaultDurability: 6
-  shootOutForce: 400
+  doesNotLoseDurability: 0
+  OnDurabilityRunOut:
+    m_PersistentCalls:
+      m_Calls: []
+  shootOutForce: 2000
   bulletPrefab: {fileID: 594461137963306328, guid: b34d465d82216144ab2a01742f18a2d9, type: 3}
 --- !u!1 &4728601483118797564
 GameObject:
@@ -167,6 +175,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9071874017222825569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5374475826855994729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 942377584201434204}
+  m_Layer: 0
+  m_Name: FistPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &942377584201434204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5374475826855994729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4476150436241233814}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6107486586187407544
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +238,7 @@ Transform:
   m_Children:
   - {fileID: 8216826132504412489}
   - {fileID: 9071874017222825569}
+  - {fileID: 4476150436241233814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7796198088834419215
@@ -213,4 +253,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414b71a24ecc00c47a71fac3fc02ac30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeaponHandler
-  currentWeapon: {fileID: 8872819937081233404}
+  fistWeapon: {fileID: 5114781909034900481}
+  leftHandCurrentWeapon: {fileID: 4258241775779538894}
+  rightHandCurrentWeapon: {fileID: 8872819937081233404}
+--- !u!1 &7300708222858240825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4476150436241233814}
+  - component: {fileID: 5114781909034900481}
+  m_Layer: 0
+  m_Name: FistWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4476150436241233814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7300708222858240825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 942377584201434204}
+  m_Father: {fileID: 8170786957503524271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5114781909034900481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7300708222858240825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6dd0c5722d4c1c987242c6fa67f0cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PrefabTypeWeapon
+  shootPoints:
+  - {fileID: 942377584201434204}
+  fireRate: 0.2
+  defaultDurability: 100
+  doesNotLoseDurability: 1
+  OnDurabilityRunOut:
+    m_PersistentCalls:
+      m_Calls: []
+  shootOutForce: 0
+  bulletPrefab: {fileID: 950402744807110711, guid: b36e0d55599b6c74eaeda4488c508abb, type: 3}

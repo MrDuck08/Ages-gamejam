@@ -10,8 +10,12 @@ public class PrefabTypeWeapon : WeaponBaseClass
     {
         foreach (Transform shootPoint in shootPoints)
         {
-            Rigidbody2D bulletRigidBody = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation).GetComponent<Rigidbody2D>();
-            bulletRigidBody.AddForce(shootPoint.up * shootOutForce);
+            GameObject spawnObj = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            if (spawnObj != null)
+            {
+                Rigidbody2D bulletRigidBody = spawnObj.GetComponent<Rigidbody2D>();
+                bulletRigidBody.AddForce(shootPoint.up * shootOutForce);   
+            }
         }
     }
     
