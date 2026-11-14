@@ -18,10 +18,12 @@ public class PlayerWeaponHandler : MonoBehaviour
     
     [SerializeField] private WeaponBaseClass leftHandCurrentWeapon; //temporary serialization because of yeah
     [SerializeField] private WeaponBaseClass rightHandCurrentWeapon; //temporary serialization because of yeah
-
+    
     public WeaponBaseClass LeftHandCurrentWeapon => leftHandCurrentWeapon;
     public WeaponBaseClass RightHandCurrentWeapon => rightHandCurrentWeapon;
-    
+    [SerializeField] private Transform leftHandTransform;
+    [SerializeField] private Transform rightHandTransform;
+
     public void Awake()
     {
         if (Singleton != null)
@@ -76,10 +78,9 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void PickUpWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand)
     {
-        weaponToSwapTo.gameObject.transform.SetParent(transform);
+        weaponToSwapTo.gameObject.transform.SetParent(whichHand ? rightHandTransform : leftHandTransform);
         weaponToSwapTo.gameObject.transform.localPosition = Vector3.zero;
         weaponToSwapTo.gameObject.transform.localRotation = Quaternion.identity;
-        
         SwapToWeapon(weaponToSwapTo, whichHand, false);
     }
 
