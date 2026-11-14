@@ -90,7 +90,7 @@ public class TestSpawner : MonoBehaviour
         if(enemySpawnInterval > 0.25f)
         {
             enemySpawnInterval -= 0.05f;
-            decreaseChanceForSpawn += 3;
+            decreaseChanceForSpawn += 2;
 
             StartCoroutine(IncreaseDifficultyRoutine());
         }

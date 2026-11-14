@@ -35,10 +35,10 @@ public class EnemyHealth : Health
         // Den ska droppa
         if(dropChanse == 0)
         {
-            int whatToDrop = Random.Range(0, 5);
+            int whatToDrop = Random.Range(0, 10);
 
             //Drop weapon
-            if(whatToDrop <= 3)
+            if(whatToDrop <= 7)
             {
                 int rareWeaponDropList = Random.Range(0, 3);
 

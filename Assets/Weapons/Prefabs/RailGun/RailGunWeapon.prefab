@@ -132,7 +132,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   betweenShotsTimer: 0
-  shotDistance: 15
+  shotDistance: 17
   damage: 10
   staggerTime: 2
   raycastAll: 1
