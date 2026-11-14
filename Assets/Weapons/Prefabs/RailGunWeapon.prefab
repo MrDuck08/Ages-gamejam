@@ -124,13 +124,14 @@ MonoBehaviour:
   - {fileID: 7298744923165769168}
   - {fileID: 1015254261805787224}
   - {fileID: 7193148079676866509}
-  fireRate: 2.5
+  fireRate: 1.3
   defaultDurability: 10
   doesNotLoseDurability: 0
   weaponIcon: {fileID: -4108038252174119852, guid: 0c0aae41763dfae479dff2b7ae2a6cbe, type: 3}
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
+  betweenShotsTimer: 0
   shotDistance: 15
   damage: 10
   staggerTime: 2
