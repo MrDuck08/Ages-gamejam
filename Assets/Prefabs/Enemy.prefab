@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7275904027702274086}
   - component: {fileID: 4716017533393136086}
   - component: {fileID: 281806826981412735}
+  - component: {fileID: 932752529171964243}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Temporaries
@@ -200,6 +201,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!114 &932752529171964243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449698669327287373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f699f05b6e4247b79979c5cb4b3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  damageFromTouchingEnemyForOneSecond: 10
 --- !u!1001 &3732340320862360094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,6 +226,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyVisuals
       objectReference: {fileID: 0}
+    - target: {fileID: 1044785163610518626, guid: ca21124ddf1de2a4dabc3cb61c888856, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044785163610518626, guid: ca21124ddf1de2a4dabc3cb61c888856, type: 3}
+      propertyPath: 'm_Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
+    - target: {fileID: 5489833022319986292, guid: ca21124ddf1de2a4dabc3cb61c888856, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489833022319986292, guid: ca21124ddf1de2a4dabc3cb61c888856, type: 3}
+      propertyPath: 'm_Animations.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
     - target: {fileID: 6075619087514135138, guid: ca21124ddf1de2a4dabc3cb61c888856, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

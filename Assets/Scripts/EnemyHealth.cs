@@ -48,11 +48,13 @@ public class EnemyHealth : Health
                     whatWeaponDrop = Random.Range(0, rareWeaponsList.Count);
                     GameObject spawnedObj = Instantiate(rareWeaponsList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
+                    spawnedObj.transform.rotation = Quaternion.Euler(0,0,Random.Range(-180f, 180f));
                 }
                 else
                 {
                     GameObject spawnedObj = Instantiate(commonWeaponsList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
+                    spawnedObj.transform.rotation = Quaternion.Euler(0,0,Random.Range(-180f, 180f));
                 }
 
             }
@@ -66,11 +68,13 @@ public class EnemyHealth : Health
                     whatWeaponDrop = Random.Range(0, hullDropsList.Count);
                     GameObject spawnedObj = Instantiate(hullDropsList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
+                    spawnedObj.transform.rotation = Quaternion.Euler(0,0,Random.Range(-180f, 180f));
                 }
                 else
                 {
                     GameObject spawnedObj = Instantiate(legsDropList[whatWeaponDrop]);
                     spawnedObj.transform.position = transform.position;
+                    spawnedObj.transform.rotation = Quaternion.Euler(0,0,Random.Range(-180f, 180f));
                 }
 
             }
