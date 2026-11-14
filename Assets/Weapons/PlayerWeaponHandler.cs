@@ -4,11 +4,42 @@ using UnityEngine.InputSystem;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
-    [SerializeField] private WeaponBaseClass currentWeapon; //temporary serialization because of yeah
-    public void ShootWeapon(InputAction.CallbackContext context)
+    [Tooltip("This one exists outside of the weapon stack as we do not want it to be swapable to unless you run out of durability for your current weapon.")]
+    [SerializeField] private WeaponBaseClass fistWeapon;
+    
+    [SerializeField] private WeaponBaseClass leftHandCurrentWeapon; //temporary serialization because of yeah
+    [SerializeField] private WeaponBaseClass rightHandCurrentWeapon; //temporary serialization because of yeah
+    public void ShootWeaponLeftHand(InputAction.CallbackContext context)
     {
-        if(context.performed) currentWeapon.InputTryShootWeapon();
+        if(context.performed) leftHandCurrentWeapon.InputTryShootWeapon();
+    }
+    public void ShootWeaponRightHand(InputAction.CallbackContext context)
+    {
+        if(context.performed) rightHandCurrentWeapon.InputTryShootWeapon();
     }
 
-    //also need a way to tell this weapon handler that we lost the weapon because of decrease of durability.
+    public void SwapToWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand)
+    {
+        WeaponBaseClass currentWeapon = whichHand ? leftHandCurrentWeapon : rightHandCurrentWeapon;
+        
+        currentWeapon.OnDurabilityRunOut.RemoveListener(OnWeaponRunOutOfDurability);
+        currentWeapon.Exit();
+
+        if (!whichHand) leftHandCurrentWeapon = weaponToSwapTo;
+        else rightHandCurrentWeapon = weaponToSwapTo;
+        
+        currentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
+        currentWeapon.Enter();
+    }
+
+    private void OnWeaponRunOutOfDurability(WeaponBaseClass weaponThatDied)
+    {
+        if (weaponThatDied == leftHandCurrentWeapon)
+        {
+            SwapToWeapon(fistWeapon, weaponThatDied != leftHandCurrentWeapon);
+        }
+        
+        //we ran out of durability, so let's kill it!
+        Destroy(weaponThatDied.gameObject);
+    }
 }

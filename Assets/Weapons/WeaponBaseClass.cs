@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class WeaponBaseClass : MonoBehaviour
 {
@@ -8,9 +9,17 @@ public abstract class WeaponBaseClass : MonoBehaviour
     [SerializeField] protected List<Transform> shootPoints = new();
     [SerializeField] private float fireRate;
     [SerializeField] private float defaultDurability;
+    [Tooltip("This is just for the fist.")]
+    [SerializeField] private bool doesNotLoseDurability;
+
+    public float DefaultDurability => defaultDurability;
+    public bool DoesNotLoseDurability => doesNotLoseDurability;
+    
+    
+    public UnityEvent<WeaponBaseClass>  OnDurabilityRunOut = new();
     
     private float betweenShotsTimer;
-    protected float durability;
+    private float durability;
 
     public virtual void Enter()
     {
@@ -27,9 +36,15 @@ public abstract class WeaponBaseClass : MonoBehaviour
         if (betweenShotsTimer >= 0)
         {
             //WE CAN FIRE LAD!
-            durability--;
+            if(!doesNotLoseDurability) durability--;
+            
             ShootWeapon();
             betweenShotsTimer = fireRate;
+
+            if (durability <= 0)
+            {
+                OnDurabilityRunOut?.Invoke(this);
+            }
         }
     }
     public virtual void Exit(){}
