@@ -1541,7 +1541,7 @@ PrefabInstance:
     - target: {fileID: 3750131201207881205, guid: 6d9e0dee207fa4d44aead176deb1c1fa, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 213807998}
     - target: {fileID: 4716017533393136086, guid: 6d9e0dee207fa4d44aead176deb1c1fa, type: 3}
       propertyPath: rareWeaponsList.Array.size
       value: 1

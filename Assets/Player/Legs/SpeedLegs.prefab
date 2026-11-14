@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseLegs
   speed: 30
   maxSpeed: 45
-  linearDampening: 2
+  linearDampening: 3
   defaultDurability: 10
   IsInfiniteDurability: 0
   icon: {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
