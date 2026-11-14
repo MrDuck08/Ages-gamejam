@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 626329212824687507}
   - component: {fileID: 2972187257752266646}
-  - component: {fileID: 5272629279539296217}
   - component: {fileID: 3750131201207881205}
   - component: {fileID: 8484162905011163623}
   - component: {fileID: 7275904027702274086}
+  - component: {fileID: 4716017533393136086}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -95,40 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &5272629279539296217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449698669327287373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f4dcee10e984949b6f35056ec4ffe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 5
-  invicibilityTime: 1
-  commonWeaponsList:
-  - {fileID: 4938346672409831563, guid: 3b19171fa25344e47b06ac6db5a71779, type: 3}
-  - {fileID: 443372268885037905, guid: 673f2e6282b781747ac12bf4310e4268, type: 3}
-  rareWeaponsList:
-  - {fileID: 4781979722556429279, guid: 628fe07873e1f8c4692746d96b75860b, type: 3}
-  OnDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5272629279539296217}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: DestroySelf
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3750131201207881205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +182,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4716017533393136086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449698669327287373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426d5baca7724a8f8979cc76100c7ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  health: 5
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4716017533393136086}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  commonWeaponsList: []
+  rareWeaponsList: []
+  chanceForDrop: 20
