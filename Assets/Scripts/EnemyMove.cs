@@ -15,6 +15,8 @@ public class EnemyMove : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
 
+        target = FindObjectOfType<PlayerMovement>().gameObject.transform;
+
         currentMoveSpeed = moveSpeed;
     }
     
