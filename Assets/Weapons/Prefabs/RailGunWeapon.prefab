@@ -124,7 +124,7 @@ MonoBehaviour:
   - {fileID: 7298744923165769168}
   - {fileID: 1015254261805787224}
   - {fileID: 7193148079676866509}
-  fireRate: 1.5
+  fireRate: 2.5
   defaultDurability: 15
   doesNotLoseDurability: 0
   OnDurabilityRunOut:
@@ -248,7 +248,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1707881335, guid: 5edd172eb57d5b9418ec65badcc8bda7, type: 3}
-  m_Color: {r: 0.15872455, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.5239029, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

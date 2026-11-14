@@ -359,6 +359,7 @@ MonoBehaviour:
   durability: 10
   IsInfiniteDurability: 1
   icon: {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
+  spriteRender: {fileID: 0}
 --- !u!1 &6430901038694569406
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +374,7 @@ GameObject:
   - component: {fileID: 8202362915607172050}
   - component: {fileID: 7416384199970099309}
   - component: {fileID: 6486647870781705876}
+  - component: {fileID: 1324468522729886683}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -488,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   health: 0
+  invicibilityTime: 1
   weaponsObjList: []
   OnDeath:
     m_PersistentCalls:
@@ -689,6 +692,52 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!61 &1324468522729886683
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6430901038694569406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.020910501, y: -0.016728342}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.94, y: 1.45}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.175147, y: 0.68049014}
+  m_EdgeRadius: 0
 --- !u!1 &8533662921486513950
 GameObject:
   m_ObjectHideFlags: 0

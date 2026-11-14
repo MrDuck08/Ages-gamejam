@@ -82,7 +82,7 @@ MonoBehaviour:
   shootPoints:
   - {fileID: 9146965769709988895}
   fireRate: 0.15
-  defaultDurability: 40
+  defaultDurability: 50
   doesNotLoseDurability: 0
   OnDurabilityRunOut:
     m_PersistentCalls:
@@ -211,7 +211,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1707881335, guid: 5edd172eb57d5b9418ec65badcc8bda7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.037330866, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
