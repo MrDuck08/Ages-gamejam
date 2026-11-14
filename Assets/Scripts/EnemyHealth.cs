@@ -7,6 +7,9 @@ public class EnemyHealth : Health
     [SerializeField] private List<GameObject> commonWeaponsList = new List<GameObject>();
     [SerializeField] private List<GameObject> rareWeaponsList = new List<GameObject>();
 
+    [SerializeField] private List<GameObject> hullDropsList = new List<GameObject>();
+    [SerializeField] private List<GameObject> legsDropList = new List<GameObject>();
+
     [SerializeField] private int chanceForDrop = 20;
 
     private EnemyMove enemyMove;
@@ -29,17 +32,51 @@ public class EnemyHealth : Health
         // Den ska droppa
         if(dropChanse == 0)
         {
-            int rareWeaponDropList = Random.Range(0, 3);
+            int whatToDrop = Random.Range(0, 5);
 
-            int whatWeaponDrop = Random.Range(0, commonWeaponsList.Count);
-            if (rareWeaponDropList == 0)
+            //Drop weapon
+            if(whatToDrop <= 2)
             {
-                whatWeaponDrop = Random.Range(0, rareWeaponsList.Count);
+                Debug.Log("Drop Weapon");
+                int rareWeaponDropList = Random.Range(0, 3);
+
+                int whatWeaponDrop = Random.Range(0, commonWeaponsList.Count);
+                if (rareWeaponDropList == 0)
+                {
+                    whatWeaponDrop = Random.Range(0, rareWeaponsList.Count);
+                    GameObject spawnedObj = Instantiate(rareWeaponsList[whatWeaponDrop]);
+                    spawnedObj.transform.position = transform.position;
+                    Debug.Log("Drop Common");
+                }
+                else
+                {
+                    GameObject spawnedObj = Instantiate(commonWeaponsList[whatWeaponDrop]);
+                    spawnedObj.transform.position = transform.position;
+                    Debug.Log("Drop Rail gun");
+                }
+
             }
+            else
+            {
+                Debug.Log("Drop part");
+                int hullDrop = Random.Range(0, 3);
 
+                int whatWeaponDrop = Random.Range(0, legsDropList.Count);
+                if (hullDrop == 0)
+                {
+                    whatWeaponDrop = Random.Range(0, hullDropsList.Count);
+                    GameObject spawnedObj = Instantiate(hullDropsList[whatWeaponDrop]);
+                    spawnedObj.transform.position = transform.position;
+                    Debug.Log("Drop Hull");
+                }
+                else
+                {
+                    GameObject spawnedObj = Instantiate(legsDropList[whatWeaponDrop]);
+                    spawnedObj.transform.position = transform.position;
+                    Debug.Log("Drop Leg");
+                }
 
-            GameObject spawnedObj = Instantiate(commonWeaponsList[whatWeaponDrop]);
-            spawnedObj.transform.position = transform.position;
+            }
 
         }
         base.DestroySelf();

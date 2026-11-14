@@ -1,19 +1,38 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
+    public static PlayerWeaponHandler Singleton;
+    
     [Tooltip("This one exists outside of the weapon stack as we do not want it to be swapable to unless you run out of durability for your current weapon.")]
     [SerializeField] private WeaponBaseClass leftFistWeapon;
     [SerializeField] private WeaponBaseClass rightFistWeapon;
-
+    
+    [HideInInspector] public UnityEvent OnWeaponChange = new();
+    
     [Space]
     [Space]
     
     [SerializeField] private WeaponBaseClass leftHandCurrentWeapon; //temporary serialization because of yeah
     [SerializeField] private WeaponBaseClass rightHandCurrentWeapon; //temporary serialization because of yeah
 
+    public WeaponBaseClass LeftHandCurrentWeapon => leftHandCurrentWeapon;
+    public WeaponBaseClass RightHandCurrentWeapon => rightHandCurrentWeapon;
+    
+    public void Awake()
+    {
+        if (Singleton != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Singleton = this;
+    }
+    
     private void Start()
     {
         leftHandCurrentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
@@ -52,6 +71,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         
         currentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         currentWeapon.Enter();
+        OnWeaponChange?.Invoke();
     }
 
     public void PickUpWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand)

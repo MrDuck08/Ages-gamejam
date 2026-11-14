@@ -82,7 +82,7 @@ MonoBehaviour:
   shootPoints:
   - {fileID: 9146965769709988895}
   fireRate: 0.15
-  defaultDurability: 50
+  defaultDurability: 45
   doesNotLoseDurability: 0
   OnDurabilityRunOut:
     m_PersistentCalls:

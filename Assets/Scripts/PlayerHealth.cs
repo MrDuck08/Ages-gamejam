@@ -22,6 +22,7 @@ public class PlayerHealth : Health
     [SerializeField] private PlayerWeaponHandler weaponHandler;
     [SerializeField] private PlayerMovement playerMove;
     private BaseHull currentHull;
+    public BaseHull Hull => currentHull;
 
     public void Awake()
     {
@@ -38,6 +39,7 @@ public class PlayerHealth : Health
     {
         if (!invincible)
         {
+
             float damageCalculating = damage;
             
             //hull will mitigate damage only for health taking

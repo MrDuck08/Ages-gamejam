@@ -125,7 +125,7 @@ MonoBehaviour:
   - {fileID: 1015254261805787224}
   - {fileID: 7193148079676866509}
   fireRate: 2.5
-  defaultDurability: 15
+  defaultDurability: 10
   doesNotLoseDurability: 0
   OnDurabilityRunOut:
     m_PersistentCalls:
