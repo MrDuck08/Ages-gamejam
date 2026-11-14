@@ -5,10 +5,14 @@ public class BaseHull : MonoBehaviour
 {
     [Header("Settings")] 
     [SerializeField] private float durability;
+
+    public float Durability => durability;
     
     [Header("Visuals")] 
     [SerializeField] private Sprite icon;
 
+    public Sprite Icon => icon;
+    
     [SerializeField] private SpriteRenderer spriteRender;
     
     private Pickupable pickupable;

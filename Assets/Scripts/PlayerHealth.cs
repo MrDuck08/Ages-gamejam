@@ -22,6 +22,7 @@ public class PlayerHealth : Health
     [SerializeField] private PlayerWeaponHandler weaponHandler;
     [SerializeField] private PlayerMovement playerMove;
     private BaseHull currentHull;
+    public BaseHull Hull => currentHull;
 
     public void Awake()
     {

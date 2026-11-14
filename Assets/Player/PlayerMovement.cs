@@ -1,17 +1,23 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Singleton;
+    
     [SerializeField] private Rigidbody2D rb;
     [NonSerialized] public InputAction moveAction;
     [NonSerialized] public InputAction lookAction;
     
     private BaseLegs currentLegs;
     [SerializeField] private BaseLegs baseLegs;
+    public BaseLegs Legs => currentLegs;
+    [HideInInspector]
+    public UnityEvent OnLegsChange = new();
     
     private Vector2 virtualMousePosition;
     [Header("Mouse aiming")]
@@ -19,6 +25,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float sizeOfMouseConfineRing;
 
     private Camera cam;
+    public void Awake()
+    {
+        if (Singleton != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Singleton = this;
+    }
+    
     private void Start()
     {
         SetNewLegs(baseLegs);
@@ -97,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearDamping = legs.LinearDampening;
         MoveSpeed = legs.Speed;
         MaxSpeed = legs.MaxSpeed;
+        OnLegsChange?.Invoke();
     }
 
     public void TryPickUpNewLegs(BaseLegs legsWeTrynnaPickUp)
