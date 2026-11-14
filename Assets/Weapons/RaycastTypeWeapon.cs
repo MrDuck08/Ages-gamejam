@@ -14,12 +14,17 @@ public class RaycastTypeWeapon : WeaponBaseClass
     {
         foreach (Transform shootPoint in shootPoints)
         {
-            RaycastHit2D hit = Physics2D.Raycast(shootPoint.position, shootPoint.up, shotDistance, layersToCheckFiringFor);
-            if (hit.collider != null)
+            RaycastHit2D[] hit = Physics2D.RaycastAll(shootPoint.position, shootPoint.up, shotDistance, layersToCheckFiringFor);
+            if (hit != null)
             {
                 //we hit something!
-                Debug.Log("We hit the following object! " + hit.collider.gameObject);
-                hit.collider.gameObject.GetComponent<Health>().TakeDamage(damage);
+
+                for (int i = 0; i < hit.Length; i++)
+                {
+
+                    hit[i].collider.gameObject.GetComponent<Health>().TakeDamage(damage);
+
+                }
             }
         }
     }
