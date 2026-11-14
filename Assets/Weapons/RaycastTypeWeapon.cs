@@ -23,7 +23,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
                 if (hit != null)
                 {
                     //we hit something!
-
+                    Debug.Log(hit.Length + " How mnay enemies hit");
                     for (int i = 0; i < hit.Length; i++)
                     {
 
