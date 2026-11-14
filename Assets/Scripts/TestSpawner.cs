@@ -12,6 +12,7 @@ public class TestSpawner : MonoBehaviour
 
     float enemySpawnInterval = 0.6f;
     int maxEnemySpawn = 10;
+    public int decreaseChanceForSpawn = 0;
 
     float difficultyIncreaseInterval = 13;
 
@@ -88,6 +89,7 @@ public class TestSpawner : MonoBehaviour
         if(enemySpawnInterval > 0.30f)
         {
             enemySpawnInterval -= 0.05f;
+            decreaseChanceForSpawn += 5;
 
             StartCoroutine(IncreaseDifficultyRoutine());
         }
