@@ -68,4 +68,10 @@ public class PlayerWeaponHandler : MonoBehaviour
         SwapToWeapon(weaponThatDied != leftHandCurrentWeapon ? rightFistWeapon : leftFistWeapon, weaponThatDied != leftHandCurrentWeapon, true);
         Destroy(weaponThatDied.gameObject);
     }
+
+    public void TakeDurabilityDamage(float damage)
+    {
+        leftHandCurrentWeapon.TakeDurabilityDamage(damage / 2f);
+        rightHandCurrentWeapon.TakeDurabilityDamage(damage / 2f);
+    }
 }

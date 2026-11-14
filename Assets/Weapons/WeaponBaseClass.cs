@@ -45,15 +45,10 @@ public abstract class WeaponBaseClass : MonoBehaviour
         if (betweenShotsTimer >= 0)
         {
             //WE CAN FIRE LAD!
-            if(!doesNotLoseDurability) durability--;
-            
             ShootWeapon();
             betweenShotsTimer = fireRate;
 
-            if (durability <= 0)
-            {
-                OnDurabilityRunOut?.Invoke(this);
-            }
+            TakeDurabilityDamage(1);
         }
     }
 
@@ -61,6 +56,15 @@ public abstract class WeaponBaseClass : MonoBehaviour
     {
         pickupable.HasBeenPickedUp = false;
         transform.SetParent(null);
+    }
+
+    public void TakeDurabilityDamage(float damage)
+    {
+        if(!doesNotLoseDurability) durability -= damage;
+        if (durability <= 0)
+        {
+            OnDurabilityRunOut?.Invoke(this);
+        }
     }
 
     protected abstract void ShootWeapon();

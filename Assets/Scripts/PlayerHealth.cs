@@ -8,12 +8,24 @@ public class PlayerHealth : Health
     [Header("Player")]
     [SerializeField] private float invicibilityTime = 1f;
     private bool invincible;
+
+    [Header("Refrences for damage dealing")] 
+    [SerializeField] private PlayerWeaponHandler weaponHandler;
+    [SerializeField] private PlayerMovement playerMove;
+    //here we also need a refrence to the hull.
     
     public override void TakeDamage(float damage, float staggerTime)
     {
         if (!invincible)
         {
-            base.TakeDamage(damage, staggerTime);
+            float damageCalculating = damage;
+            
+            //hull will mitigate damage only for health taking
+
+            playerMove.LegsTakeDurabilityDamage(damage / 3f);
+            weaponHandler.TakeDurabilityDamage(damage / 3f);
+            
+            base.TakeDamage(damageCalculating, staggerTime);
             StartCoroutine(InvicibilityRoutine());
         }
     }
