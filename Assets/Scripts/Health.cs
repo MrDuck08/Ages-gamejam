@@ -12,7 +12,8 @@ public class Health : MonoBehaviour
     bool invincible = false;
 
     [Header("Enemy")]
-    [SerializeField] private List<GameObject> weaponsObjList = new List<GameObject>();
+    [SerializeField] private List<GameObject> commonWeaponsList = new List<GameObject>();
+    [SerializeField] private List<GameObject> rareWeaponsList = new List<GameObject>();
 
     int chanceForDrop = 20;
 
@@ -60,10 +61,16 @@ public class Health : MonoBehaviour
             // Den ska droppa
             if(dropChanse == 0)
             {
+                int rareWeaponDropList = Random.Range(0, 3);
 
-                int whatWeaponDrop = Random.Range(0, weaponsObjList.Count);
+                int whatWeaponDrop = Random.Range(0, commonWeaponsList.Count);
+                if (rareWeaponDropList == 0)
+                {
+                    whatWeaponDrop = Random.Range(0, rareWeaponsList.Count);
+                }
 
-                GameObject spawnedObj = Instantiate(weaponsObjList[whatWeaponDrop]);
+
+                GameObject spawnedObj = Instantiate(commonWeaponsList[whatWeaponDrop]);
                 spawnedObj.transform.position = transform.position;
 
             }

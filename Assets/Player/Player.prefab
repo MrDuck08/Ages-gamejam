@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f4dcee10e984949b6f35056ec4ffe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 0
+  health: 25
   invicibilityTime: 1
   weaponsObjList: []
   OnDeath:
