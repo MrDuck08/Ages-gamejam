@@ -13,7 +13,7 @@ public class TestSpawner : MonoBehaviour
     float enemySpawnInterval = 0.6f;
     int maxEnemySpawn = 10;
 
-    float difficultyIncreaseInterval = 5;
+    float difficultyIncreaseInterval = 13;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -85,7 +85,7 @@ public class TestSpawner : MonoBehaviour
 
         yield return new WaitForSeconds(difficultyIncreaseInterval);
 
-        if(enemySpawnInterval > 0.35f)
+        if(enemySpawnInterval > 0.30f)
         {
             enemySpawnInterval -= 0.05f;
 

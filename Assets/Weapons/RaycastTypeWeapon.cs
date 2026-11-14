@@ -27,7 +27,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
                 {
 
                     //we hit something!
-                    Debug.Log(hit.Length + " How mnay enemies hit");
+                    //Debug.Log(hit.Length + " How mnay enemies hit");
                     for (int i = 0; i < hit.Length; i++)
                     {
 
