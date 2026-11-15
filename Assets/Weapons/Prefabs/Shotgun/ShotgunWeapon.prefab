@@ -134,9 +134,12 @@ MonoBehaviour:
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
+  audioManager: {fileID: 0}
+  railgunOrNo: 0
   shotDistance: 6
   damage: 3
   staggerTime: 1.5
+  chargeUpTime: 0
   raycastAll: 1
   trailEffectObj: {fileID: 1728838832443497699, guid: 7daf8977404d72a439ef7757acb714b4, type: 3}
   layersToCheckFiringFor:
@@ -156,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   prefabReference: {fileID: 11400000, guid: 36271a93b6639b24dbbae5cce11b884b, type: 2}
   pickUpType: 0
-  scrapValue: 0
+  scrapValue: 50
   HasBeenPickedUp: 0
 --- !u!61 &2121579522775194201
 BoxCollider2D:
