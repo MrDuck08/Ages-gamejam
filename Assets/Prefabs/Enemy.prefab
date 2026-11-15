@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4716017533393136086}
   - component: {fileID: 281806826981412735}
   - component: {fileID: 932752529171964243}
+  - component: {fileID: 3004123783797097615}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Temporaries
@@ -141,6 +142,18 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 3004123783797097615}
+        m_TargetAssemblyTypeName: InstantianteTemporaryObjectScript, Assembly-CSharp
+        m_MethodName: SpawnObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4716017533393136086}
         m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
         m_MethodName: DestroySelf
@@ -214,6 +227,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   damageFromTouchingEnemyForOneSecond: 10
+--- !u!114 &3004123783797097615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449698669327287373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a774ab491296f44804ff0dbbf85a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantianteTemporaryObjectScript
+  prefabOfObjectToSpawn: {fileID: 6862423245014122108, guid: 91a9769c1c321e54ca2f12c878ec302c, type: 3}
 --- !u!1001 &3732340320862360094
 PrefabInstance:
   m_ObjectHideFlags: 0
