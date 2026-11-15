@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     private int maxEnemySpawn = 10;
     public int decreaseChanceForSpawn = 0;
 
-    private float difficultyIncreaseInterval = 17;
+    private float difficultyIncreaseInterval = 15;
     private float difficultyTimer;
 
     private void Awake()

@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   prefabReference: {fileID: 11400000, guid: 3f062ee26ac017449b91a23c4ef9a7ad, type: 2}
   pickUpType: 0
-  scrapValue: 0
+  scrapValue: 40
   HasBeenPickedUp: 0
 --- !u!61 &4345696708796822123
 BoxCollider2D:

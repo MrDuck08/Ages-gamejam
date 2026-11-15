@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   prefabReference: {fileID: 11400000, guid: fcf0d2ea59889534683355de53d7dba3, type: 2}
   pickUpType: 1
-  scrapValue: 0
+  scrapValue: 45
   HasBeenPickedUp: 0
 --- !u!114 &6881190942599519786
 MonoBehaviour:
