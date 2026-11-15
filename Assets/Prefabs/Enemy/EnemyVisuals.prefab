@@ -55,9 +55,14 @@ MonoBehaviour:
   - {fileID: -2143373980341527264, guid: 349685f7a6d4f56418291c976d21ed51, type: 3}
   - {fileID: -2457970648479473204, guid: 5fdf957d50fadf24b94f23d8e93f71aa, type: 3}
   - {fileID: 5890754317964845256, guid: a3ed1b77614a30447aa080cac26ef5bd, type: 3}
+  - {fileID: 8339571187818693570, guid: 274aa0dbc369fe84f9e291f86b914803, type: 3}
+  - {fileID: -3008466958493119960, guid: 9819e0a2aca60e84e97ab9c16265eb12, type: 3}
+  - {fileID: -3008466958493119960, guid: 9819e0a2aca60e84e97ab9c16265eb12, type: 3}
   trackRenderer: {fileID: 5489833022319986292}
   trackClips:
   - {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
+  - {fileID: 7400000, guid: 1f5d16c1402be574f8406fd4848da4a3, type: 2}
+  - {fileID: 7400000, guid: d6ad63570a7867141855461eb13a6503, type: 2}
 --- !u!1 &3060983804892467090
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +188,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -291,7 +297,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: 20b18f77bd73fbe4a950e2bc296812c9, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

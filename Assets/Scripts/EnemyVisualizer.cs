@@ -13,6 +13,5 @@ public class EnemyVisualizer : MonoBehaviour
     {
         hullRenderer.sprite = hullSprites[Random.Range(0, hullSprites.Length)];
         trackRenderer.clip = trackClips[Random.Range(0, trackClips.Length)];
-        Destroy(this);
     }
 }
