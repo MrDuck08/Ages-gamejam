@@ -57,7 +57,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
         betweenShotsTimer = 0.05f;
     }
 
-    public void Update()
+    public virtual void Update()
     {
         if (betweenShotsTimer > 0) betweenShotsTimer -= Time.deltaTime;
 
@@ -82,7 +82,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
         if (betweenShotsTimer <= 0)
         {
             //WE CAN FIRE LAD!
-            ShootWeapon();
+            ChargeUp();
             betweenShotsTimer = fireRate;
 
             if(weaponAnimator != null)
@@ -111,5 +111,5 @@ public abstract class WeaponBaseClass : MonoBehaviour
         }
     }
 
-    protected abstract void ShootWeapon();
+    protected abstract void ChargeUp();
 }

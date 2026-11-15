@@ -126,7 +126,7 @@ MonoBehaviour:
   - {fileID: 7298744923165769168}
   - {fileID: 1015254261805787224}
   - {fileID: 7193148079676866509}
-  fireRate: 1.3
+  fireRate: 0.9
   defaultDurability: 10
   weaponAnimator: {fileID: 5837377922902827364}
   doesNotLoseDurability: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   shotDistance: 17
   damage: 10
   staggerTime: 2
+  chargeUpTime: 0.4
   raycastAll: 1
   trailEffectObj: {fileID: 1728838832443497699, guid: 7daf8977404d72a439ef7757acb714b4, type: 3}
   layersToCheckFiringFor:

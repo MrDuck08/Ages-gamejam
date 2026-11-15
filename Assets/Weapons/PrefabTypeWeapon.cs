@@ -7,7 +7,7 @@ public class PrefabTypeWeapon : WeaponBaseClass
     [SerializeField] private float shootOutForce;
     [SerializeField] private GameObject bulletPrefab;
     
-    protected override void ShootWeapon()
+    protected override void ChargeUp()
     {
         foreach (Transform shootPoint in shootPoints)
         {

@@ -7,6 +7,9 @@ public class RaycastTypeWeapon : WeaponBaseClass
     [SerializeField] private float shotDistance;
     [SerializeField] private float damage;
     [SerializeField] private float staggerTime = 1.5f;
+    [SerializeField] private float chargeUpTime = 0f;
+    float currentChargeTime = 0f;
+    bool startedChargeUp = false;
     [SerializeField] private bool raycastAll = false;
 
     [SerializeField] private GameObject trailEffectObj;
@@ -15,7 +18,29 @@ public class RaycastTypeWeapon : WeaponBaseClass
     [SerializeField] private LayerMask layersToCheckFiringFor;
 
 
-    protected override void ShootWeapon()
+    public override void Update()
+    {
+        base.Update();
+
+        if (startedChargeUp)
+        {
+            currentChargeTime -= Time.deltaTime;
+
+            if(currentChargeTime < 0f)
+            {
+                startedChargeUp = false;
+                ShotWeapon();
+            }
+        }
+    }
+
+    protected override void ChargeUp()
+    {
+        startedChargeUp = true;
+        currentChargeTime = chargeUpTime;
+    }
+
+    void ShotWeapon()
     {
         if (raycastAll)
         {
@@ -57,7 +82,6 @@ public class RaycastTypeWeapon : WeaponBaseClass
                 trail.GetComponent<BulletTrailEffect>().MoveAndFadeTrail(shootPoint.position, shootPoint.position + shootPoint.up * shotDistance);
             }
         }
-
     }
 
     private void OnDrawGizmos()
