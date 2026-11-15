@@ -14,12 +14,14 @@ public class EnemyHealth : Health
 
     private EnemyMove enemyMove;
     EnemySpawner spawner;
+    private AudioManager audioManager;
     
     private void Start()
     {
         enemyMove = GetComponent<EnemyMove>();
 
         spawner = FindAnyObjectByType<EnemySpawner>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
     
     public override void TakeDamage(float damage, float staggerTime)
@@ -30,6 +32,8 @@ public class EnemyHealth : Health
 
     public override void DestroySelf()
     {
+        audioManager.EnemyDieSoundPlay(transform.position);
+
         int dropChanse =  Random.Range(0, chanceForDrop + spawner.decreaseChanceForSpawn);
 
         // Den ska droppa
@@ -38,7 +42,7 @@ public class EnemyHealth : Health
             int whatToDrop = Random.Range(0, 10);
 
             //Drop weapon
-            if(whatToDrop <= 6)
+            if(whatToDrop <= 5)
             {
                 int rareWeaponDropList = Random.Range(0, 3);
 
@@ -61,7 +65,7 @@ public class EnemyHealth : Health
             else
             {
                 int hullDrop = Random.Range(0, 3);
-
+                Debug.Log(hullDrop);
                 int whatWeaponDrop = Random.Range(0, legsDropList.Count);
                 if (hullDrop == 0)
                 {
