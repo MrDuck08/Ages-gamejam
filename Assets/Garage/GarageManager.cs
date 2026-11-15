@@ -21,6 +21,12 @@ public class GarageManager : MonoBehaviour
             objectToGive.GetComponent<InventoryItemUIScript>().Init(PlayerScrapAndBagManager.Singleton.thingsStoredInBag[i]);
         }
     }
+
+    public void ScrapAllMarkedForScrapping()
+    {
+        GameObject[] allInventoryItems = GameObject.FindGameObjectsWithTag("InventoryUIItem");
+        
+    }
     
     public void ExitGarage()
     {
