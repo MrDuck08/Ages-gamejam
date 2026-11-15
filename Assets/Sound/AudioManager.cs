@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [Header("Player")]
     [SerializeField] private GameObject partsExplodeSound;
     [SerializeField] List<GameObject> partsDropSoundList = new List<GameObject>();
+    [SerializeField] private GameObject equpPartSound;
 
     [Header("Weapons")]
     [SerializeField] private GameObject railgunChrageUpSound;
@@ -30,6 +31,13 @@ public class AudioManager : MonoBehaviour
         GameObject partDrop = Instantiate(partsDropSoundList[whatPartDropSound]);
 
         SoundGeneral(partDrop, Vector2.zero, false);
+    }
+
+    public void EquipPartSoundPlay()
+    {
+        GameObject equipPart = Instantiate(equpPartSound);
+
+        SoundGeneral(equipPart, Vector2.zero, false);
     }
 
     #region Weapons

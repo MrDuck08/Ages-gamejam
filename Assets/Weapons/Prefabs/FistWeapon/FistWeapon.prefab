@@ -163,10 +163,12 @@ MonoBehaviour:
   defaultDurability: 100
   weaponAnimator: {fileID: 0}
   doesNotLoseDurability: 1
-  weaponIcon: {fileID: 0}
+  weaponIcon: {fileID: -5191308225362931239, guid: 403fc87d3fb89054a82fee2368de4ad2, type: 3}
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
+  audioManager: {fileID: 0}
+  amIRifle: 0
   shootOutForce: 0
   bulletPrefab: {fileID: 950402744807110711, guid: b36e0d55599b6c74eaeda4488c508abb, type: 3}
   OnShoot:
