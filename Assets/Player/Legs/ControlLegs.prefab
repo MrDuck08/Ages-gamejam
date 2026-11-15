@@ -125,7 +125,7 @@ MonoBehaviour:
   speed: 17
   maxSpeed: 30
   linearDampening: 10
-  defaultDurability: 20
+  defaultDurability: 10
   IsInfiniteDurability: 0
   icon: {fileID: -840025896963149130, guid: 0a881c066bf0910419576f0b7585611a, type: 3}
   spriteRender: {fileID: 3256329643896325119}
