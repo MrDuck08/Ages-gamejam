@@ -30,7 +30,10 @@ public abstract class WeaponBaseClass : MonoBehaviour
     private Pickupable pickupable;
     [HideInInspector] public AudioManager audioManager;
     
-    private float betweenShotsTimer; 
+    private float betweenShotsTimer;
+
+    private bool durabilityHasAlreadyBeenSetFix;
+    
     public float Durability
     {
         get => durability;
@@ -40,7 +43,10 @@ public abstract class WeaponBaseClass : MonoBehaviour
     private void Start()
     {
         tag = "Weapon";
-        durability = defaultDurability;
+        if (!durabilityHasAlreadyBeenSetFix)
+        {
+            durability = defaultDurability;   
+        }
         pickupable = GetComponent<Pickupable>();
         audioManager = FindAnyObjectByType<AudioManager>();
 
@@ -114,4 +120,10 @@ public abstract class WeaponBaseClass : MonoBehaviour
     }
 
     protected abstract void ChargeUp();
+
+    public void SetDurabilityAtSetup(float toSetDurability)
+    {
+        durabilityHasAlreadyBeenSetFix = true;
+        durability = toSetDurability;
+    }
 }
