@@ -559,7 +559,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 91be2b2f4717f3447890124f90a7b427, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9b03805a36339414ba91b72121b69876, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -883,7 +883,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 91be2b2f4717f3447890124f90a7b427, type: 3}
+  m_Resource: {fileID: 8300000, guid: ec58bcae4a8b7c14ca9bd9dfebb96d9f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
@@ -1019,6 +1019,8 @@ MonoBehaviour:
   partsExplodeSound: {fileID: 9029921330257160487}
   partsDropSoundList:
   - {fileID: 7317059683545651540}
+  - {fileID: 4276746602760405498}
+  - {fileID: 1485645743318986667}
   railgunChrageUpSound: {fileID: 5834796702737590067}
   railgunShotSoundsList: {fileID: 8390463151723554426}
   shotgunShotSoundList:
@@ -1824,9 +1826,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 4fe589e4688ac604d944b50759ad26b7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4543bcc3d3a751f49868342c4e17313d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0

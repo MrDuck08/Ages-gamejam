@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
 
     public void RailGunShotSoundPlay()
     {
-        return;
+
         GameObject shotSound = Instantiate(railgunShotSoundsList);
 
         SoundGeneral(shotSound, Vector2.zero, false);
