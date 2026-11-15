@@ -8,7 +8,9 @@ public class PlayerScrapAndBagManager : MonoBehaviour
 
     [Header("Win Condition Settings")] 
     [SerializeField] private int winScoreThreshold;
+    public int winScore => winScoreThreshold;
 
+    
     private PickupableObjectInfoClass leftHandStoredWeapon;
     private PickupableObjectInfoClass rightHandStoredWeapon;
     
