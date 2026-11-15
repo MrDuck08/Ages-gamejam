@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93717995250d474fada6b946e930296b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
+  prefabReference: {fileID: 0}
   pickUpType: 1
   scrapValue: 0
   HasBeenPickedUp: 1
@@ -422,7 +423,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   sizeOfMouseConfineRing: 0.5
-  AimType: 1
+  AimType: 0
 --- !u!114 &6615732472976885500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,8 +464,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  invicibilityTime: 1
-  damageFromTouchingEnemyForOneSecond: 100
   layersWeCanTakeDamageFrom:
     serializedVersion: 2
     m_Bits: 64
@@ -654,6 +653,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1849be59-2bab-45e0-95bb-e670e2e774cc
     m_ActionName: 'Player/MainMenuButton[/Keyboard/g]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8a59a5f4-5b5e-4952-ae44-bbe005eae14f
+    m_ActionName: 'Player/DebugButton[/Keyboard/l]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -771,7 +774,7 @@ PrefabInstance:
     - target: {fileID: 5114781909034900481, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: weaponIcon
       value: 
-      objectReference: {fileID: 1208040086343421634, guid: f53f11bc9c375364bb6695f004a5bbc3, type: 3}
+      objectReference: {fileID: -5191308225362931239, guid: 403fc87d3fb89054a82fee2368de4ad2, type: 3}
     - target: {fileID: 5114781909034900481, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: weaponAnimator
       value: 
@@ -848,10 +851,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9193590293224349066, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
-      propertyPath: weaponIcon
-      value: 
-      objectReference: {fileID: 1208040086343421634, guid: f53f11bc9c375364bb6695f004a5bbc3, type: 3}
     - target: {fileID: 9193590293224349066, guid: 623e43740e54ac443955e967a6ea5543, type: 3}
       propertyPath: weaponAnimator
       value: 
@@ -964,10 +963,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4703331059133237998}
     m_Modifications:
+    - target: {fileID: 795992610275621799, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3268960467369333540, guid: d7b2d90735b53c746b187a01e8a181c3, type: 3}
+    - target: {fileID: 1772226416963393066, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1849487118215921617, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 1957118125770106475, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3268960467369333540, guid: d7b2d90735b53c746b187a01e8a181c3, type: 3}
     - target: {fileID: 3168369853508910576, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
       propertyPath: m_Pivot.x
       value: 0

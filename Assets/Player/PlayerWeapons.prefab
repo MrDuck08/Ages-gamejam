@@ -53,6 +53,8 @@ MonoBehaviour:
       m_Calls: []
   leftHandCurrentWeapon: {fileID: 5114781909034900481}
   rightHandCurrentWeapon: {fileID: 9193590293224349066}
+  leftHandTransform: {fileID: 0}
+  rightHandTransform: {fileID: 0}
 --- !u!1001 &830701596710553383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113,10 +115,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightFist
       objectReference: {fileID: 0}
-    - target: {fileID: 8363482587420007085, guid: bbff0ac7253723545984d9924b85efad, type: 3}
-      propertyPath: weaponIcon
-      value: 
-      objectReference: {fileID: 1994507137525636367, guid: 54b6d7666046e584e8a7828867c21107, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
