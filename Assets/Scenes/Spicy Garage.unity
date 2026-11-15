@@ -267,6 +267,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6529995596281705507, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6529995596281705507, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6615732472976885500, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -293,6 +301,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+--- !u!114 &55473981 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1594143360273135921, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+  m_PrefabInstance: {fileID: 55473980}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &68742866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93163,7 +93182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90590659abbef1d468339a5ca3f928f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GarageStarter
-  ChangeToGarage: 0
+  UITimer: {fileID: 55473981}
 --- !u!4 &732727558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4703331059133237998, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
