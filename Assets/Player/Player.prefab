@@ -1608,8 +1608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f83af1ecce0313449a3b3500fb1e5c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  player: {fileID: 4703331059133237998}
-  thisTrans: {fileID: 7765508696875041284}
 --- !u!1001 &3672626733935682539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1835,9 +1833,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 4703331059133237998}
     m_Modifications:
     - target: {fileID: 795992610275621799, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 795992610275621799, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3268960467369333540, guid: d7b2d90735b53c746b187a01e8a181c3, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 1772226416963393066, guid: 6e61c2d89afb9c64788cc5f644a8126c, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
