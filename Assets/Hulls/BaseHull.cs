@@ -16,10 +16,12 @@ public class BaseHull : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRender;
     
     private Pickupable pickupable;
+    private AudioManager audioManager;
     
     private void Start()
     {
         pickupable = GetComponent<Pickupable>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void BePickedUp(Transform newParent)
@@ -35,6 +37,7 @@ public class BaseHull : MonoBehaviour
     {
         if (durability <= damage)
         {
+            audioManager.PartsDestroySoundPlay();
             Destroy(gameObject);
             return damage - durability;
         }

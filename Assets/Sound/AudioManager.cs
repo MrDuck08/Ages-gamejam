@@ -7,6 +7,10 @@ public class AudioManager : MonoBehaviour
 {
 
     [Header("Player")]
+    [SerializeField] private GameObject partsExplodeSound;
+    [SerializeField] List<GameObject> partsDropSoundList = new List<GameObject>();
+
+    [Header("Weapons")]
     [SerializeField] private GameObject railgunChrageUpSound;
     [SerializeField] private GameObject railgunShotSoundsList;
     [SerializeField] List<GameObject> shotgunShotSoundList = new List<GameObject>();
@@ -14,7 +18,21 @@ public class AudioManager : MonoBehaviour
     [SerializeField] List<GameObject> rifleShotSoundList = new List<GameObject>();
     [SerializeField] private GameObject punchSound;
 
+    public void PartsDestroySoundPlay()
+    {
+        GameObject partEplode = Instantiate(partsExplodeSound);
 
+        SoundGeneral(partEplode, Vector2.zero, false);
+
+
+        int whatPartDropSound = Random.Range(0, partsDropSoundList.Count);
+
+        GameObject partDrop = Instantiate(partsDropSoundList[whatPartDropSound]);
+
+        SoundGeneral(partDrop, Vector2.zero, false);
+    }
+
+    #region Weapons
     public void RailgunCargeUpSoundPlay()
     {
 
@@ -26,6 +44,7 @@ public class AudioManager : MonoBehaviour
 
     public void RailGunShotSoundPlay()
     {
+        return;
         GameObject shotSound = Instantiate(railgunShotSoundsList);
 
         SoundGeneral(shotSound, Vector2.zero, false);
@@ -70,6 +89,7 @@ public class AudioManager : MonoBehaviour
         SoundGeneral(punchSound, Vector2.zero, false);
     }
 
+    #endregion
 
     void SoundGeneral(GameObject sound, Vector2 newPos, bool infinite)
     {

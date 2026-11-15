@@ -27,11 +27,13 @@ public class BaseLegs : MonoBehaviour
     private Pickupable pickupable;
 
     private bool hasAlreadyHadDurabilitySet;
+    private AudioManager audioManager;
     
     private void Start()
     {
         if(!hasAlreadyHadDurabilitySet) durability = DefaultDurability;
         pickupable = GetComponent<Pickupable>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void BePickedUp(Transform newParent)
@@ -50,6 +52,7 @@ public class BaseLegs : MonoBehaviour
         durability -= damage;
         if (durability <= 0)
         {
+            audioManager.PartsDestroySoundPlay();
             Destroy(gameObject);
             return true;
         }
