@@ -38,12 +38,21 @@ public class RaycastTypeWeapon : WeaponBaseClass
     {
         startedChargeUp = true;
         currentChargeTime = chargeUpTime;
+
+        // Det är bara railgun som har raycastAll
+        // vet att det är lat och opraktiskt men det är en gamejam så din opinion är invalid
+        if (raycastAll)
+        {
+            audioManager.RailgunCargeUpSoundPlay();
+        }
     }
 
     void ShotWeapon()
     {
         if (raycastAll)
         {
+            audioManager.RailGunShotSoundPlay();
+
             foreach (Transform shootPoint in shootPoints)
             {
 

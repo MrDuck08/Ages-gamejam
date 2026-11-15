@@ -28,6 +28,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
     public UnityEvent<WeaponBaseClass>  OnDurabilityRunOut = new();
 
     private Pickupable pickupable;
+    [HideInInspector] public AudioManager audioManager;
     
     private float betweenShotsTimer; 
     public float Durability
@@ -41,6 +42,7 @@ public abstract class WeaponBaseClass : MonoBehaviour
         tag = "Weapon";
         durability = defaultDurability;
         pickupable = GetComponent<Pickupable>();
+        audioManager = FindAnyObjectByType<AudioManager>();
 
         AnimationClip[] clips = weaponAnimator.runtimeAnimatorController.animationClips;
         foreach (AnimationClip clip in clips)
