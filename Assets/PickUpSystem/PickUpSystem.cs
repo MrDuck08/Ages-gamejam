@@ -93,6 +93,7 @@ public class PickUpSystem : MonoBehaviour
         
         if (currentThingWeCanTryToPickUp != null)
         {
+            audioManager.InBagSound();
             //put it in the bag
             PlayerScrapAndBagManager.Singleton.PutThingInBag(currentThingWeCanTryToPickUp);
         }
