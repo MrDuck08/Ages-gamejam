@@ -2058,7 +2058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1205103112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2100,7 +2100,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Alex \"Ankan\" Nilsson: \nProgramming\nBenjamin \"Littlearne\" Rosenqvist:
     \nProgramming\nEmily \"Emntity\" Runesson: \nProgramming and Pixel Art\nHermon
-    Hay: \nHand-drawn assets"
+    Hay: \nHand-drawn assets & Music"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 32b17e86d7560384c9175ca59bea9517, type: 2}
   m_sharedMaterial: {fileID: 2602631837900656263, guid: 32b17e86d7560384c9175ca59bea9517, type: 2}
