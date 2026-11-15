@@ -112,6 +112,11 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     public void PickUpWeapon(WeaponBaseClass weaponToSwapTo, bool whichHand)
     {
+        if (weaponToSwapTo == rightHandCurrentWeapon || weaponToSwapTo == leftHandCurrentWeapon)
+        {
+            return;
+        }
+        
         weaponToSwapTo.gameObject.transform.SetParent(whichHand ? rightHandTransform : leftHandTransform);
         weaponToSwapTo.gameObject.transform.localPosition = Vector3.zero;
         weaponToSwapTo.gameObject.transform.localRotation = Quaternion.identity;
