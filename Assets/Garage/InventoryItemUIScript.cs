@@ -37,7 +37,42 @@ public class InventoryItemUIScript : MonoBehaviour, IPointerClickHandler
         if (eventData.button == PointerEventData.InputButton.Left)
         {
             //select it
-            Debug.Log("We selected it");
+            //try to place it in a slot!
+            int whichSlot = 999;
+            switch (refToTheClass.type)
+            {
+                case PickupableType.Weapon:
+                    if (!GarageManager.Singleton.isTryingToPlaceInRightHand && PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon == null)
+                    {
+                        //try to place in left hand
+                        whichSlot = 0;
+                    }
+                    else if (GarageManager.Singleton.isTryingToPlaceInRightHand && PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon == null)
+                    {
+                        //try to place in right hand
+                        whichSlot = 1;
+                    }
+                    break;
+                case PickupableType.Legs:
+                    if (PlayerScrapAndBagManager.Singleton.LegsStored == null)
+                    {
+                        //try to place in legs
+                        whichSlot = 3;
+                    }
+                    break;
+                case PickupableType.Hull:
+                    if (PlayerScrapAndBagManager.Singleton.HullStored == null)
+                    {
+                        //try to place in hull
+                        whichSlot = 2;
+                    }
+                    break;
+            }
+
+            if (whichSlot == 999) return;
+            
+            PlayerScrapAndBagManager.Singleton.PutInOneOfStoredSlots(whichSlot, refToTheClass);
+            Destroy(gameObject);
         }
         else if (eventData.button == PointerEventData.InputButton.Right)
         {

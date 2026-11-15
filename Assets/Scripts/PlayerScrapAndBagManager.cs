@@ -151,4 +151,30 @@ public class PlayerScrapAndBagManager : MonoBehaviour
         scrapCount += thingToScrap.scrapValue / (halfCost ? 2 : 1);
         thingsStoredInBag.Remove(thingToScrap);
     }
+
+    public void PutInOneOfStoredSlots(int which, PickupableObjectInfoClass whatThing)
+    {
+        //0 == left hand
+        //1 == right hand
+        //2 == hull
+        //3 == legs
+
+        switch (which)
+        {
+            case 0:
+                leftHandStoredWeapon = whatThing;
+                break;
+            case 1:
+                rightHandStoredWeapon = whatThing;
+                break;
+            case 2:
+                hullStored = whatThing;
+                break;
+            case 3:
+                legsStored = whatThing;
+                break;
+        }
+
+        thingsStoredInBag.Remove(whatThing);
+    }
 }

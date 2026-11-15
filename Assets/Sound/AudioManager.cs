@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] List<GameObject> partsDropSoundList = new List<GameObject>();
     [SerializeField] private GameObject equpPartSound;
 
+    [Space]
+
     [Header("Weapons")]
     [SerializeField] private GameObject railgunChrageUpSound;
     [SerializeField] private GameObject railgunShotSoundsList;
@@ -18,6 +20,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private GameObject shotgunShellsSound;
     [SerializeField] List<GameObject> rifleShotSoundList = new List<GameObject>();
     [SerializeField] private GameObject punchSound;
+
+    [Space]
+
+    [Header("Enemies")]
+    [SerializeField] List<GameObject> enemyDeathSoundList = new List<GameObject>();
 
     public void PartsDestroySoundPlay()
     {
@@ -98,6 +105,17 @@ public class AudioManager : MonoBehaviour
     }
 
     #endregion
+
+    public void EnemyDieSoundPlay(Vector2 pos)
+    {
+        int whatDeathSound = Random.Range(0, enemyDeathSoundList.Count);
+
+        GameObject deathSound = Instantiate(enemyDeathSoundList[whatDeathSound]);
+
+        SoundGeneral(deathSound, pos, false);
+    }
+
+
 
     void SoundGeneral(GameObject sound, Vector2 newPos, bool infinite)
     {
