@@ -54,12 +54,12 @@ public class GarageManager : MonoBehaviour
             }
         }
     }
-
+    public int winAmount;
     private void Update()
     {
-        scrapCountText.text = "Scrap Count: " + PlayerScrapAndBagManager.Singleton.ScrapCount;
+        scrapCountText.text = $"Scrap Count: {PlayerScrapAndBagManager.Singleton.ScrapCount} / {winAmount}";
     }
-
+    
     public void ReBuildInventory()
     {
         Transform[] allChildren = inventoryContentTransform.GetComponentsInChildren<Transform>();
