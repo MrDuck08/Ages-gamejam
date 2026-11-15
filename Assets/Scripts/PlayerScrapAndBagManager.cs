@@ -59,6 +59,37 @@ public class PlayerScrapAndBagManager : MonoBehaviour
         Destroy(thingToPutInBag.gameObject);
     }
 
+    public void PutThingInBag(int whatWereYou)
+    {
+        //0 == left hand
+        //1 == right hand
+        //2 == hull
+        //3 == legs
+        switch (whatWereYou)
+        {
+            case 0:
+                if (leftHandStoredWeapon == null) return;
+                thingsStoredInBag.Add(leftHandStoredWeapon);
+                leftHandStoredWeapon = null;
+                break;
+            case 1:
+                if (rightHandStoredWeapon == null) return;
+                thingsStoredInBag.Add(rightHandStoredWeapon);
+                rightHandStoredWeapon = null;
+                break;
+            case 2:
+                if (hullStored == null) return;
+                thingsStoredInBag.Add(hullStored);
+                hullStored = null;
+                break;
+            case 3:
+                if (legsStored == null) return;
+                thingsStoredInBag.Add(legsStored);
+                legsStored = null;
+                break;
+        }
+    }
+
     public void RefreshWeaponInfoObjects()
     {
         if (!PlayerWeaponHandler.Singleton.IsWeaponAFist(PlayerWeaponHandler.Singleton.LeftHandCurrentWeapon))

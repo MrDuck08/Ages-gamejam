@@ -6,11 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class GarageManager : MonoBehaviour
 {
+    public static GarageManager Singleton;
+    
     [SerializeField] private GameObject inventoryItemPrefab;
     [SerializeField] private Transform inventoryContentTransform;
 
     [SerializeField] private TextMeshProUGUI scrapCountText;
-    
+
+    private void Awake()
+    {
+        if (Singleton != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Singleton = this;
+    }
+
     private void Start()
     {
         BuildInventory();
@@ -43,6 +56,16 @@ public class GarageManager : MonoBehaviour
     private void Update()
     {
         scrapCountText.text = "Scrap Count: " + PlayerScrapAndBagManager.Singleton.ScrapCount;
+    }
+
+    public void ReBuildInventory()
+    {
+        Transform[] allChildren = inventoryContentTransform.GetComponentsInChildren<Transform>();
+        for (int i = allChildren.Length - 1; i >= 1; i--)
+        {
+            Destroy(allChildren[i].gameObject);
+        }
+        BuildInventory();
     }
 
     public void ExitGarage()
