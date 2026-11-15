@@ -13,6 +13,8 @@ public class GarageManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scrapCountText;
 
+    public bool isTryingToPlaceInRightHand;
+    
     private void Awake()
     {
         if (Singleton != null)
@@ -71,5 +73,10 @@ public class GarageManager : MonoBehaviour
     public void ExitGarage()
     {
         SceneManager.LoadScene("Spicy Garage");
+    }
+
+    public void SetIsTryingToPlaceInRightHand(bool setTo)
+    {
+        isTryingToPlaceInRightHand = setTo;
     }
 }
