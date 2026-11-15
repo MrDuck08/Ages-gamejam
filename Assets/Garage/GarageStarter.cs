@@ -2,17 +2,28 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class GarageStarter : MonoBehaviour
 {
-    public bool ChangeToGarage;
+    private float goToGarageTimer;
+
+    [SerializeField] private Slider UITimer;
+
+    private void Start()
+    {
+        goToGarageTimer = Random.Range(60f, 120f);
+        UITimer.maxValue = goToGarageTimer;
+    }
 
     private void Update()
     {
-        if (ChangeToGarage)
+        goToGarageTimer -= Time.deltaTime;
+        UITimer.value = goToGarageTimer;
+        if (goToGarageTimer <= 0)
         {
             GoToGarage();
-            ChangeToGarage = false;
         }
     }
 
