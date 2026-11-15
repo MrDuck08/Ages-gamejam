@@ -45,7 +45,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             spawnedWeapon.GetComponent<Pickupable>().HasBeenPickedUp = true;
             
             WeaponBaseClass weaponClass = spawnedWeapon.GetComponent<WeaponBaseClass>();
-            weaponClass.Durability = PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon.durability;
+            weaponClass.SetDurabilityAtSetup(PlayerScrapAndBagManager.Singleton.LeftHandStoredWeapon.durability);
             
             PickUpWeapon(weaponClass, false);
         }
@@ -62,7 +62,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             spawnedWeapon.GetComponent<Pickupable>().HasBeenPickedUp = true;
             
             WeaponBaseClass weaponClass = spawnedWeapon.GetComponent<WeaponBaseClass>();
-            weaponClass.Durability = PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon.durability;
+            weaponClass.SetDurabilityAtSetup(PlayerScrapAndBagManager.Singleton.RightHandStoredWeapon.durability);
             
             PickUpWeapon(weaponClass, true);
         }
