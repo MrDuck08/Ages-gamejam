@@ -123,7 +123,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             rightHandCurrentWeapon = weaponToSwapTo;
             currentWeapon = rightHandCurrentWeapon;
         }
-        
+
         currentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         currentWeapon.Enter();
         OnWeaponChange?.Invoke();
@@ -135,7 +135,7 @@ public class PlayerWeaponHandler : MonoBehaviour
         {
             return;
         }
-        
+
         weaponToSwapTo.gameObject.transform.SetParent(whichHand ? rightHandTransform : leftHandTransform);
         weaponToSwapTo.gameObject.transform.localPosition = Vector3.zero;
         weaponToSwapTo.gameObject.transform.localRotation = Quaternion.identity;

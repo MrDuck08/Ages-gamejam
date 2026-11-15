@@ -15,7 +15,13 @@ public class PickUpSystem : MonoBehaviour
     [SerializeField] private LayerMask layermaskOfPickupAbles;
 
     private Pickupable currentThingWeCanTryToPickUp;
-    
+    private AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindAnyObjectByType<AudioManager>();
+    }
+
     private void Update()
     {
         Collider2D[] findings = Physics2D.OverlapCircleAll(transform.position, pickUpRadius, layermaskOfPickupAbles);
@@ -41,6 +47,8 @@ public class PickUpSystem : MonoBehaviour
         
         if (currentThingWeCanTryToPickUp != null)
         {
+            audioManager.EquipPartSoundPlay();
+
             if (currentThingWeCanTryToPickUp.Type == PickupableType.Weapon)
             {
                 currentThingWeCanTryToPickUp.HasBeenPickedUp = true;
@@ -62,6 +70,8 @@ public class PickUpSystem : MonoBehaviour
         
         if (currentThingWeCanTryToPickUp != null)
         {
+            audioManager.EquipPartSoundPlay();
+
             if (currentThingWeCanTryToPickUp.Type == PickupableType.Weapon)
             {
                 currentThingWeCanTryToPickUp.HasBeenPickedUp = true;
