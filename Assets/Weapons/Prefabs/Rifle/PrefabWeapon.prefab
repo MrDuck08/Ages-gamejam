@@ -103,6 +103,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  audioManager: {fileID: 0}
+  amIRifle: 1
   shootOutForce: 2500
   bulletPrefab: {fileID: 594461137963306328, guid: b34d465d82216144ab2a01742f18a2d9, type: 3}
   OnShoot:

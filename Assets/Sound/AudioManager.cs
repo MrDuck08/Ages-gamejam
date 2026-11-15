@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private GameObject railgunShotSoundsList;
     [SerializeField] List<GameObject> shotgunShotSoundList = new List<GameObject>();
     [SerializeField] private GameObject shotgunShellsSound;
+    [SerializeField] List<GameObject> rifleShotSoundList = new List<GameObject>();
+    [SerializeField] private GameObject punchSound;
 
 
     public void RailgunCargeUpSoundPlay()
@@ -48,6 +51,23 @@ public class AudioManager : MonoBehaviour
         GameObject shellSound = Instantiate(shotgunShellsSound);
 
         SoundGeneral(shellSound, pos, false);
+    }
+
+    public void RifleShootSound()
+    {
+        int whatShotSound = Random.Range(0, rifleShotSoundList.Count);
+
+        GameObject shotSound = Instantiate(rifleShotSoundList[whatShotSound]);
+
+
+        SoundGeneral(shotSound, Vector2.zero, false);
+    }
+
+    public void PunchSoundPlay()
+    {
+        GameObject punchSound = Instantiate(this.punchSound);
+
+        SoundGeneral(punchSound, Vector2.zero, false);
     }
 
 
