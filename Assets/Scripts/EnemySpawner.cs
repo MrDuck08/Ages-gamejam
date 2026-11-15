@@ -15,13 +15,13 @@ public class EnemySpawner : MonoBehaviour
 
     public bool pauseExecution;
     
-    private float enemySpawnInterval = 0.6f;
+    private float enemySpawnInterval = 0.75f;
     private float enemySpawnTimer;
     
     private int maxEnemySpawn = 10;
     public int decreaseChanceForSpawn = 0;
 
-    private float difficultyIncreaseInterval = 13;
+    private float difficultyIncreaseInterval = 17;
     private float difficultyTimer;
 
     private void Awake()
@@ -91,10 +91,10 @@ public class EnemySpawner : MonoBehaviour
         difficultyTimer += Time.deltaTime;
         if (difficultyTimer < difficultyIncreaseInterval) return;
         
-        if(enemySpawnInterval > 0.25f)
+        if(enemySpawnInterval > 0.20f)
         {
             enemySpawnInterval -= 0.05f;
-            decreaseChanceForSpawn += 2;
+            decreaseChanceForSpawn += 3;
                 
             difficultyTimer = 0;
         }   
