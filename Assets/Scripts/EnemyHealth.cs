@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealth : Health
 {
-    [Header("Enemy")]
+    [Header("Enemy")] 
+    [SerializeField] private UnityEvent OnTakeDamage;
+    
     [SerializeField] private List<GameObject> commonWeaponsList = new List<GameObject>();
     [SerializeField] private List<GameObject> rareWeaponsList = new List<GameObject>();
 
@@ -27,6 +30,7 @@ public class EnemyHealth : Health
     public override void TakeDamage(float damage, float staggerTime)
     {
         StartCoroutine(enemyMove.StaggerRoutine(staggerTime));
+        OnTakeDamage?.Invoke();
         base.TakeDamage(damage, staggerTime);
     }
 
