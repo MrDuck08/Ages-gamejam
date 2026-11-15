@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private GameObject partsExplodeSound;
     [SerializeField] List<GameObject> partsDropSoundList = new List<GameObject>();
     [SerializeField] private GameObject equpPartSound;
+    [SerializeField] private GameObject inBagSound;
 
     [Space]
 
@@ -44,6 +45,13 @@ public class AudioManager : MonoBehaviour
         GameObject equipPart = Instantiate(equpPartSound);
 
         SoundGeneral(equipPart, Vector2.zero, false);
+    }
+
+    public void InBagSound()
+    {
+        GameObject bagSound = Instantiate(inBagSound);
+
+        SoundGeneral(bagSound, Vector2.zero, false);
     }
 
     #region Weapons

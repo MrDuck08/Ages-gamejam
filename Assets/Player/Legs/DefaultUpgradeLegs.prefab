@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Pickupable
   prefabReference: {fileID: 11400000, guid: fcf0d2ea59889534683355de53d7dba3, type: 2}
   pickUpType: 1
-  scrapValue: 0
+  scrapValue: 45
   HasBeenPickedUp: 0
 --- !u!114 &6881190942599519786
 MonoBehaviour:
@@ -125,7 +125,7 @@ MonoBehaviour:
   speed: 20
   maxSpeed: 40
   linearDampening: 6
-  defaultDurability: 15
+  defaultDurability: 7
   IsInfiniteDurability: 0
   icon: {fileID: -6018726565538917983, guid: 078a951fa8013fb43aaaff0fad6cec43, type: 3}
   spriteRender: {fileID: 1392119224291448865}
