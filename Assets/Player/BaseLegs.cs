@@ -25,15 +25,18 @@ public class BaseLegs : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRender;
     
     private Pickupable pickupable;
+
+    private bool hasAlreadyHadDurabilitySet;
     
     private void Start()
     {
-        durability = DefaultDurability;
+        if(!hasAlreadyHadDurabilitySet) durability = DefaultDurability;
         pickupable = GetComponent<Pickupable>();
     }
 
     public void BePickedUp(Transform newParent)
     {
+        pickupable = GetComponent<Pickupable>();
         spriteRender.enabled = false;
         pickupable.HasBeenPickedUp = true;
         transform.SetParent(newParent);
@@ -58,5 +61,11 @@ public class BaseLegs : MonoBehaviour
         spriteRender.enabled = true;
         pickupable.HasBeenPickedUp = false;
         transform.SetParent(null);
+    }
+
+    public void SetDurabilityFromSave(float durability)
+    {
+        hasAlreadyHadDurabilitySet = true;
+        this.durability = durability;
     }
 }

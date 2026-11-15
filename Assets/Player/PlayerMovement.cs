@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Basically, how mouse movement works in this game is that it confines a virtual mouse to the size of a circle around the player, this determines that ones size. Recommended size is 0.5f.")]
     [SerializeField] private float sizeOfMouseConfineRing;
 
+    private bool hasLegsAlreadyBeenSet;
+    
     private Camera cam;
     public void Awake()
     {
@@ -38,7 +40,21 @@ public class PlayerMovement : MonoBehaviour
     
     private void Start()
     {
-        SetNewLegs(baseLegs);
+        if (PlayerScrapAndBagManager.Singleton.LegsStored != null)
+        {
+            //spawn the legs, and set them as our legs.
+            GameObject spawnedLegs = Instantiate(PlayerScrapAndBagManager.Singleton.LegsStored.prefab);
+            spawnedLegs.GetComponent<Pickupable>().ScrapValue = PlayerScrapAndBagManager.Singleton.LegsStored.scrapValue;
+            spawnedLegs.GetComponent<Pickupable>().HasBeenPickedUp = true;
+            
+            spawnedLegs.GetComponent<BaseLegs>().SetDurabilityFromSave(PlayerScrapAndBagManager.Singleton.LegsStored.durability);
+            
+            SetNewLegs(spawnedLegs.GetComponent<BaseLegs>());
+        }
+        else
+        {
+            SetNewLegs(baseLegs);   
+        }
         
         cam = Camera.main;
         moveAction =  InputSystem.actions.FindAction("Move");
@@ -134,5 +150,10 @@ public class PlayerMovement : MonoBehaviour
             //ouch! our legs are gone!
             SetNewLegs(baseLegs);
         }
+    }
+
+    public bool IsCurrentLegsBaseLegs()
+    {
+        return currentLegs == baseLegs;
     }
 }

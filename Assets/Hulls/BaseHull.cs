@@ -24,6 +24,7 @@ public class BaseHull : MonoBehaviour
 
     public void BePickedUp(Transform newParent)
     {
+        pickupable = GetComponent<Pickupable>();
         pickupable.HasBeenPickedUp = true;
         transform.SetParent(newParent);
         transform.localPosition = Vector3.zero;
@@ -46,5 +47,10 @@ public class BaseHull : MonoBehaviour
         spriteRender.enabled = true;
         pickupable.HasBeenPickedUp = false;
         transform.SetParent(null);
+    }
+
+    public void SetDurabilityFromSave(float durability)
+    {
+        this.durability = durability;
     }
 }

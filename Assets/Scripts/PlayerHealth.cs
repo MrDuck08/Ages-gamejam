@@ -30,6 +30,21 @@ public class PlayerHealth : Health
         Singleton = this;
     }
 
+    private void Start()
+    {
+        if (PlayerScrapAndBagManager.Singleton.HullStored != null)
+        {
+            GameObject spawnedHull = Instantiate(PlayerScrapAndBagManager.Singleton.HullStored.prefab);
+            spawnedHull.GetComponent<Pickupable>().ScrapValue = PlayerScrapAndBagManager.Singleton.HullStored.scrapValue;
+            spawnedHull.GetComponent<Pickupable>().HasBeenPickedUp = true;
+            
+            BaseHull hullClass = spawnedHull.GetComponent<BaseHull>();
+            hullClass.SetDurabilityFromSave(PlayerScrapAndBagManager.Singleton.HullStored.durability);
+            
+            SwapHull(hullClass);
+        }
+    }
+
     public override void TakeDamage(float damage, float staggerTime)
     {
         float damageCalculating = damage;

@@ -12,8 +12,14 @@ public class PlayerScrapAndBagManager : MonoBehaviour
     private PickupableObjectInfoClass leftHandStoredWeapon;
     private PickupableObjectInfoClass rightHandStoredWeapon;
     
+    private PickupableObjectInfoClass hullStored;
+    private PickupableObjectInfoClass legsStored;
+    
     public PickupableObjectInfoClass LeftHandStoredWeapon => leftHandStoredWeapon;
     public PickupableObjectInfoClass RightHandStoredWeapon => rightHandStoredWeapon;
+    
+    public PickupableObjectInfoClass HullStored => hullStored;
+    public PickupableObjectInfoClass LegsStored => legsStored;
     
     [HideInInspector] public List<PickupableObjectInfoClass> thingsStoredInBag = new();
     
@@ -79,18 +85,38 @@ public class PlayerScrapAndBagManager : MonoBehaviour
         {
             rightHandStoredWeapon = null;
         }
+
+        if (!PlayerMovement.Singleton.IsCurrentLegsBaseLegs())
+        {
+            legsStored = new PickupableObjectInfoClass(PlayerMovement.Singleton.Legs.Durability,
+                PlayerMovement.Singleton.Legs.GetComponent<Pickupable>().prefabReference.prefabHolden,
+                PlayerMovement.Singleton.Legs.GetComponent<Pickupable>().ScrapValue, PickupableType.Legs);
+        }
+        else
+        {
+            legsStored = null;
+        }
+
+        if (PlayerHealth.Singleton.Hull != null)
+        {
+            hullStored = new PickupableObjectInfoClass(PlayerHealth.Singleton.Hull.Durability,
+                PlayerHealth.Singleton.Hull.GetComponent<Pickupable>().prefabReference.prefabHolden,
+                PlayerHealth.Singleton.Hull.GetComponent<Pickupable>().ScrapValue, PickupableType.Hull);
+        }
+        else
+        {
+            hullStored = null;
+        }
     }
     
     public void TurnItemIntoScrap(Pickupable thingToScrap, bool halfCost = false)
     {
-        //NOTE! Here we won't scrap it so we need to like uhhhh
         scrapCount += thingToScrap.ScrapValue / (halfCost ? 2 : 1);
         
         Destroy(thingToScrap.gameObject);
     }
     public void TurnItemIntoScrap(PickupableObjectInfoClass thingToScrap, bool halfCost = false)
     {
-        //NOTE! Here we won't scrap it so we need to like uhhhh
         scrapCount += thingToScrap.scrapValue / (halfCost ? 2 : 1);
         thingsStoredInBag.Remove(thingToScrap);
     }
