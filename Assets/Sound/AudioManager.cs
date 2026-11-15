@@ -7,7 +7,9 @@ public class AudioManager : MonoBehaviour
 
     [Header("Player")]
     [SerializeField] private GameObject railgunChrageUpSound;
-    [SerializeField] GameObject railgunShotSoundsList;
+    [SerializeField] private GameObject railgunShotSoundsList;
+    [SerializeField] List<GameObject> shotgunShotSoundList = new List<GameObject>();
+    [SerializeField] private GameObject shotgunShellsSound;
 
 
     public void RailgunCargeUpSoundPlay()
@@ -26,6 +28,27 @@ public class AudioManager : MonoBehaviour
         SoundGeneral(shotSound, Vector2.zero, false);
     }
 
+    public void ShotgunShotSoundPlay(Vector2 pos)
+    {
+        int whatShotgunSound = Random.Range(0, shotgunShotSoundList.Count);
+
+        GameObject shotSound = Instantiate(shotgunShotSoundList[whatShotgunSound]);
+
+
+        StartCoroutine(ShotgunShellsSoundRoutine(pos));
+        SoundGeneral(shotSound, Vector2.zero, false);
+    }
+
+    IEnumerator ShotgunShellsSoundRoutine(Vector2 pos)
+    {
+
+        yield return new WaitForSeconds(0.2f);
+
+
+        GameObject shellSound = Instantiate(shotgunShellsSound);
+
+        SoundGeneral(shellSound, pos, false);
+    }
 
     void SoundGeneral(GameObject sound, Vector2 newPos, bool infinite)
     {

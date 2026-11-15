@@ -134,6 +134,8 @@ MonoBehaviour:
   OnDurabilityRunOut:
     m_PersistentCalls:
       m_Calls: []
+  audioManager: {fileID: 0}
+  railgunOrNo: 1
   shotDistance: 17
   damage: 10
   staggerTime: 2

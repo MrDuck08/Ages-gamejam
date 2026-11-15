@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class RaycastTypeWeapon : WeaponBaseClass
 {
+    [SerializeField] private bool railgunOrNo = false;
+
     [Header("Raycast settings")]
     [SerializeField] private float shotDistance;
     [SerializeField] private float damage;
@@ -39,9 +41,8 @@ public class RaycastTypeWeapon : WeaponBaseClass
         startedChargeUp = true;
         currentChargeTime = chargeUpTime;
 
-        // Det är bara railgun som har raycastAll
-        // vet att det är lat och opraktiskt men det är en gamejam så din opinion är invalid
-        if (raycastAll)
+        // Vet att det är latt med idk, orkar inte
+        if (railgunOrNo)
         {
             audioManager.RailgunCargeUpSoundPlay();
         }
@@ -51,7 +52,14 @@ public class RaycastTypeWeapon : WeaponBaseClass
     {
         if (raycastAll)
         {
-            audioManager.RailGunShotSoundPlay();
+            if (railgunOrNo)
+            {
+                audioManager.RailGunShotSoundPlay();
+            }
+            else
+            {
+                audioManager.ShotgunShotSoundPlay(transform.position);
+            }
 
             foreach (Transform shootPoint in shootPoints)
             {
@@ -77,6 +85,7 @@ public class RaycastTypeWeapon : WeaponBaseClass
         }
         else
         {
+
             foreach (Transform shootPoint in shootPoints)
             {
 
