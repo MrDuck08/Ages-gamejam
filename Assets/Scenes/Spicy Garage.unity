@@ -426687,7 +426687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c96dd573583f940a0e9a484131a4ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScrapAndBagManager
-  winScoreThreshold: 0
+  winScoreThreshold: 1000
   thingsStoredInBag: []
 --- !u!4 &1763541536
 Transform:
