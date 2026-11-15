@@ -177,7 +177,7 @@ MonoBehaviour:
   - {fileID: 7339919373720579633, guid: 78419dd7452054841b54866d00e7363f, type: 3}
   - {fileID: 7404129216366114795, guid: 1a4de47854178ce45b8f237a383ea57a, type: 3}
   - {fileID: 5808648373751779142, guid: 634c5a3c11c006a439a6c2fecb9f7e2d, type: 3}
-  chanceForDrop: 16
+  chanceForDrop: 13
 --- !u!58 &281806826981412735
 CircleCollider2D:
   m_ObjectHideFlags: 0
