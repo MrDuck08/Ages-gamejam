@@ -15,7 +15,7 @@ public class PlayerScrapAndBagManager : MonoBehaviour
     public PickupableObjectInfoClass LeftHandStoredWeapon => leftHandStoredWeapon;
     public PickupableObjectInfoClass RightHandStoredWeapon => rightHandStoredWeapon;
     
-    [SerializeField] private List<PickupableObjectInfoClass> thingsStoredInBag = new();
+    [HideInInspector] public List<PickupableObjectInfoClass> thingsStoredInBag = new();
     
     private int scrapCount;
     public int ScrapCount => scrapCount;
@@ -49,7 +49,7 @@ public class PlayerScrapAndBagManager : MonoBehaviour
                 break;
         }
         
-        thingsStoredInBag.Add(new PickupableObjectInfoClass(durability, thingToPutInBag.prefabReference.prefabHolden, thingToPutInBag.ScrapValue));
+        thingsStoredInBag.Add(new PickupableObjectInfoClass(durability, thingToPutInBag.prefabReference.prefabHolden, thingToPutInBag.ScrapValue, thingToPutInBag.Type));
         Destroy(thingToPutInBag.gameObject);
     }
 
@@ -61,7 +61,7 @@ public class PlayerScrapAndBagManager : MonoBehaviour
                 PlayerWeaponHandler.Singleton.LeftHandCurrentWeapon.Durability,
                 PlayerWeaponHandler.Singleton.LeftHandCurrentWeapon.gameObject.GetComponent<Pickupable>()
                     .prefabReference.prefabHolden,
-                PlayerWeaponHandler.Singleton.LeftHandCurrentWeapon.gameObject.GetComponent<Pickupable>().ScrapValue);
+                PlayerWeaponHandler.Singleton.LeftHandCurrentWeapon.gameObject.GetComponent<Pickupable>().ScrapValue, PickupableType.Weapon);
         }
         else
         {
@@ -73,7 +73,7 @@ public class PlayerScrapAndBagManager : MonoBehaviour
             rightHandStoredWeapon = new PickupableObjectInfoClass(
                 PlayerWeaponHandler.Singleton.RightHandCurrentWeapon.Durability,
                 PlayerWeaponHandler.Singleton.RightHandCurrentWeapon.gameObject.GetComponent<Pickupable>()
-                    .prefabReference.prefabHolden, PlayerWeaponHandler.Singleton.RightHandCurrentWeapon.gameObject.GetComponent<Pickupable>().ScrapValue);
+                    .prefabReference.prefabHolden, PlayerWeaponHandler.Singleton.RightHandCurrentWeapon.gameObject.GetComponent<Pickupable>().ScrapValue, PickupableType.Weapon);
         }
         else
         {

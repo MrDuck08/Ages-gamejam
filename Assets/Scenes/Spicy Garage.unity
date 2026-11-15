@@ -211,6 +211,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: 8a59a5f4-5b5e-4952-ae44-bbe005eae14f
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: 'Player/DebugButton[/Keyboard/l]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 704590834}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToGarage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GarageStarter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6486647870781705876, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6615732472976885500, guid: b0f079a4f2d82824193ef2f804da0783, type: 3}
       propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
