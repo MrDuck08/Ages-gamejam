@@ -25,11 +25,13 @@ public class BaseLegs : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRender;
     
     private Pickupable pickupable;
+    private AudioManager audioManager;
     
     private void Start()
     {
         durability = DefaultDurability;
         pickupable = GetComponent<Pickupable>();
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void BePickedUp(Transform newParent)
@@ -47,6 +49,7 @@ public class BaseLegs : MonoBehaviour
         durability -= damage;
         if (durability <= 0)
         {
+            audioManager.PartsDestroySoundPlay();
             Destroy(gameObject);
             return true;
         }

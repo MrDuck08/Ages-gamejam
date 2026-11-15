@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -24,10 +25,13 @@ public class PlayerWeaponHandler : MonoBehaviour
     [SerializeField] private Transform leftHandTransform;
     [SerializeField] private Transform rightHandTransform;
 
+    AudioManager audioManager;
+
     public void Awake()
     {
         if (Singleton != null)
         {
+            Singleton.ArtificialStart();
             Destroy(gameObject);
             return;
         }
@@ -73,6 +77,21 @@ public class PlayerWeaponHandler : MonoBehaviour
         
         leftHandCurrentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
         rightHandCurrentWeapon.OnDurabilityRunOut.AddListener(OnWeaponRunOutOfDurability);
+
+        audioManager = FindAnyObjectByType<AudioManager>();
+    }
+
+    public void ArtificialStart()
+    {
+        StartCoroutine(DelayStartRoutine());
+    }
+
+    IEnumerator DelayStartRoutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+
+        audioManager = FindAnyObjectByType<AudioManager>();
     }
 
     public void ShootWeaponLeftHand(InputAction.CallbackContext context)
@@ -125,6 +144,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
     private void OnWeaponRunOutOfDurability(WeaponBaseClass weaponThatDied)
     {
+        audioManager.PartsDestroySoundPlay();
         SwapToWeapon(weaponThatDied != leftHandCurrentWeapon ? rightFistWeapon : leftFistWeapon, weaponThatDied != leftHandCurrentWeapon, true);
         Destroy(weaponThatDied.gameObject);
     }
